@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/9bed6e624e.js" crossorigin="anonymous"></script>
+</head>
+</head>
+<body>
+    <div class="page-container">
+        <nav class="nav-bar">
+            <div class="left-nav">
+                <i class="fas fa-solid fa-bars"></i>
+                <i class="fas fa-solid fa-house-user"></i>
+            </div>
+            <div class="right-nav">
+                <i class="fas fa-plus fa-1x" id="addBtn"></i>
+                <i class="fas fa-solid fa-bell"></i>
+            </div>
+
+        </nav>
+        <div id="hero">
+            <div class="left-sidebar">
+                
+            </div>
+            <div id="todo-container">
+                <!-- added through javascript -->
+            </div>
+        </div>
+        <!-- hidden -->
+        <div class="submitCard">
+            <h1 class="cardHeader">New To-Do Item</h1>
+            <input type="text" placeholder="Title" id="itemTitle">
+            <textarea type="text" placeholder="description" id="itemDes" rows="5"></textarea>
+            <div class="dueDate-Container">   
+                <label for="dueDate">Due Date</label>
+                <input type="date" name="dueDate" id="dueDate">
+            </div>
+            <div class="priority-container">
+                <label for="priority">priority</label>
+                <select name="priority" id="priority">
+                    <option value="high">High</option>
+                    <option value="med">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+            <button id='submit' type="submit">submit</button>
+             </div>
+       </div>
+        <footer></footer>
+        <div class="overlay" id="overlay"></div>
+    </div>
+    <script src="bundle.js" defer></script>
+</body>
+</html>
