@@ -38,7 +38,10 @@ function displayController(newItem) {
     priority.classList.add('itemPriority')
     priority.textContent = (newItem.priority)
 
-    itemCard.append(title, description, dueDate, priority)
+    let deleteBtn = document.createElement('i')
+    deleteBtn.classList.add('far', 'fa-trash-alt', 'deleteBtn');
+
+    itemCard.append(title, description, dueDate, priority, deleteBtn)
 
     domHero.appendChild(itemCard)
 }
