@@ -39,6 +39,15 @@ p {
     width: 275px;
     height: 100vh;
 }
+.project-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+}
+.fa-thin.fa-plus {
+    margin: 20px;
+}
 .itemCard {
     width: 100vh;
     height: 30px;
