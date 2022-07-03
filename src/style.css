@@ -42,11 +42,17 @@ p {
 .project-header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 40px;
 }
 .fa-thin.fa-plus {
     margin: 20px;
+}
+.addProject-form {
+    display: none;
+}
+.addProject-form.active {
+    display: flex;
 }
 .itemCard {
     width: 100vh;
