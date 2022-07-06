@@ -10,11 +10,13 @@ const submitBtn = document.querySelector('#submit');
 const overlay = document.querySelector('.overlay');
 const addBtn = document.querySelector('#addBtn');
 const submitCard = document.querySelector('.submitCard');
+const projectListDOM = document.querySelector('.project-list')
 const projectAddBtn = document.querySelector('#project-addBtn');
 const projectAddForm = document.querySelector('.addProject-form');
 
-let activeProject = "Default";
-)
+let activeProject = []
+let projectList = []
+
 // Object constructor
 function ListItem (title, description, dueDate, priority, projectID) {
     this.title = title;
@@ -23,9 +25,29 @@ function ListItem (title, description, dueDate, priority, projectID) {
     this.priority = priority;
     this.projectID = projectID;
 }
-function Project (title, id) {
-    this.title = title;
-    this.id = title
+function Project (name, isActive) {
+    this.name = name;
+    this.isActive = true;
+    let taskList = [];
+
+    let createDom = function () {
+        let projectDOM = document.createElement('div')
+        projectDOM.textContent = name
+        projectDOM.classList.add('project')
+        activeProject = projectDOM;
+        projectListDOM.prepend(projectDOM)
+        makeActive(projectDOM);
+        projectDOM.classList.add('active')
+    }
+    let makeActive = function (projectDOM) {
+        let projects = projectListDOM.children;
+        for (let i = 0; i < projects.length; i++) {
+            projects[i].classList.remove('active')
+            console.log(projects[i])
+        }
+        isActive = true
+    }
+    return{createDom, makeActive, removeActive};
 }
 
 function displayController(newItem) {
@@ -58,6 +80,7 @@ function displayController(newItem) {
 submitBtn.addEventListener('click', () => {
     let newItem = new ListItem(newTitle.value, newDes.value, newDueDate.value, newPriority.value);
     displayController(newItem);
+
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
 })
@@ -67,13 +90,20 @@ addBtn.addEventListener('click', () => {
 })
 projectAddBtn.addEventListener('click', () => {
     projectAddForm.classList.add('active');
+    projectAddForm.focus();
 })
 projectAddForm.addEventListener('keypress', (e) => {
     if(e.key === 'Enter') {
-        let name = projectAddForm.textContent;
-        let newProject = new Project(name);
+        let name = projectAddForm.value;
+        let newProject = new Project(name, true);
+        projectList.push(newProject);
+        newProject.createDom();
+        // activeProject = newProject
+        projectAddForm.classList.remove('active');
+        projectAddForm.value = '';
     }
 })
+
 overlay.onclick = function closeOverlay() {
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
@@ -81,5 +111,7 @@ overlay.onclick = function closeOverlay() {
 
 
 
-
-  let defaultProject = new Project('Default');
+let defaultProject = new Project('Default');
+projectList.push(defaultProject);
+defaultProject.createDom();
+// activeProject = defaultProject
