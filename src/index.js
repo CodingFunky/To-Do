@@ -40,6 +40,7 @@ function Project (name, isActive) {
         makeActive(projectDOM);
         projectDOM.addEventListener('click', () => {
             makeActive(projectDOM);
+            printTask();
         })
     }
     let makeActive = function (projectDOM) {
@@ -51,12 +52,15 @@ function Project (name, isActive) {
         projectDOM.classList.add('active')
     }
     let printTask = function () {
+        while (todoContainer.firstChild) {
+            todoContainer.removeChild(todoContainer.firstChild)
+        }
         for (let i = 0; i < taskList.length; i++) {
             todoContainer.appendChild(taskList[i])
         }
     }
   
-    return{createDom, makeActive, taskList};
+    return{createDom, makeActive, printTask, taskList};
 }
 
 function displayController(newItem) {
@@ -113,6 +117,7 @@ projectAddForm.addEventListener('keypress', (e) => {
         activeProject = newProject
         projectAddForm.classList.remove('active');
         projectAddForm.value = '';
+        newProject.printTask();
     }
 })
 
