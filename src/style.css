@@ -60,10 +60,17 @@ p {
     padding: 24px;
 }
 .project {
-    text-align: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 30px;
+    margin: 10px;
+    padding-left: 20px;
 }
 .project.active {
-    background-color: darkgray;
+    background-color: rgb(231, 228, 228);
+    /* border-bottom: solid black 1px; */
+    border-radius: 40px;
 }
 .fa-thin.fa-plus {
     margin: 20px;

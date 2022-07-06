@@ -13,6 +13,7 @@ const submitCard = document.querySelector('.submitCard');
 const projectListDOM = document.querySelector('.project-list')
 const projectAddBtn = document.querySelector('#project-addBtn');
 const projectAddForm = document.querySelector('.addProject-form');
+const todoContainer = document.querySelector('#todo-container')
 
 let activeProject = []
 let projectList = []
@@ -37,17 +38,25 @@ function Project (name, isActive) {
         activeProject = projectDOM;
         projectListDOM.prepend(projectDOM)
         makeActive(projectDOM);
-        projectDOM.classList.add('active')
+        projectDOM.addEventListener('click', () => {
+            makeActive(projectDOM);
+        })
     }
     let makeActive = function (projectDOM) {
         let projects = projectListDOM.children;
         for (let i = 0; i < projects.length; i++) {
             projects[i].classList.remove('active')
-            console.log(projects[i])
         }
         isActive = true
+        projectDOM.classList.add('active')
     }
-    return{createDom, makeActive, removeActive};
+    let printTask = function () {
+        for (let i = 0; i < taskList.length; i++) {
+            todoContainer.appendChild(taskList[i])
+        }
+    }
+  
+    return{createDom, makeActive, taskList};
 }
 
 function displayController(newItem) {
@@ -75,14 +84,17 @@ function displayController(newItem) {
 
     itemCard.append(title, description, dueDate, priority, deleteBtn);
 
-    domHero.appendChild(itemCard);
+    todoContainer.appendChild(itemCard);
+    activeProject.taskList.push(itemCard)
+    // console.log('Nre task list')
+    // console.log(activeProject.taskList)
 }
 submitBtn.addEventListener('click', () => {
     let newItem = new ListItem(newTitle.value, newDes.value, newDueDate.value, newPriority.value);
     displayController(newItem);
-
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
+
 })
 addBtn.addEventListener('click', () => {
     submitCard.classList.add('active');
@@ -98,11 +110,13 @@ projectAddForm.addEventListener('keypress', (e) => {
         let newProject = new Project(name, true);
         projectList.push(newProject);
         newProject.createDom();
-        // activeProject = newProject
+        activeProject = newProject
         projectAddForm.classList.remove('active');
         projectAddForm.value = '';
     }
 })
+
+
 
 overlay.onclick = function closeOverlay() {
     submitCard.classList.remove('active');
@@ -114,4 +128,4 @@ overlay.onclick = function closeOverlay() {
 let defaultProject = new Project('Default');
 projectList.push(defaultProject);
 defaultProject.createDom();
-// activeProject = defaultProject
+activeProject = defaultProject
