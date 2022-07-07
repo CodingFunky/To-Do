@@ -1,4 +1,5 @@
 import './style.css';
+import { removeAllChildrenDOM } from './remove_all_child_DOM';
 
 // # is id . is class
 const newTitle = document.querySelector('#itemTitle');
@@ -10,10 +11,12 @@ const submitBtn = document.querySelector('#submit');
 const overlay = document.querySelector('.overlay');
 const addBtn = document.querySelector('#addBtn');
 const submitCard = document.querySelector('.submitCard');
-const projectListDOM = document.querySelector('.project-list')
+const projectListDOM = document.querySelector('.project-list');
 const projectAddBtn = document.querySelector('#project-addBtn');
 const projectAddForm = document.querySelector('.addProject-form');
-const todoContainer = document.querySelector('#todo-container')
+const todoContainer = document.querySelector('#todo-container');
+const projectSelector = document.querySelector('#project-selector');
+
 
 let activeProject = []
 let projectList = []
@@ -32,11 +35,11 @@ function Project (name, isActive) {
     let taskList = [];
 
     let createDom = function () {
-        let projectDOM = document.createElement('div')
-        projectDOM.textContent = name
-        projectDOM.classList.add('project')
+        let projectDOM = document.createElement('div');
+        projectDOM.textContent = name;
+        projectDOM.classList.add('project');
         activeProject = projectDOM;
-        projectListDOM.prepend(projectDOM)
+        projectListDOM.prepend(projectDOM);
         makeActive(projectDOM);
         projectDOM.addEventListener('click', () => {
             makeActive(projectDOM);
@@ -46,28 +49,28 @@ function Project (name, isActive) {
     let makeActive = function (projectDOM) {
         let projects = projectListDOM.children;
         for (let i = 0; i < projects.length; i++) {
-            projects[i].classList.remove('active')
+            projects[i].classList.remove('active');
         }
-        isActive = true
-        projectDOM.classList.add('active')
+        isActive = true;
+        projectDOM.classList.add('active');
     }
     let printTask = function () {
         while (todoContainer.firstChild) {
-            todoContainer.removeChild(todoContainer.firstChild)
+            todoContainer.removeChild(todoContainer.firstChild);
         }
         for (let i = 0; i < taskList.length; i++) {
-            todoContainer.appendChild(taskList[i])
+            todoContainer.appendChild(taskList[i]);
         }
     }
   
-    return{createDom, makeActive, printTask, taskList};
+    return{createDom, makeActive, printTask, taskList, name};
 }
 
 function displayController(newItem) {
     let itemCard = document.createElement('div');
     itemCard.classList.add('itemCard');
 
-    let title = document.createElement('p');
+    let title = document.createElement('h4');
     title.classList.add('itemTitle');
     title.textContent = (newItem.title);
 
@@ -85,24 +88,42 @@ function displayController(newItem) {
 
     let deleteBtn = document.createElement('i');
     deleteBtn.classList.add('far', 'fa-trash-alt', 'deleteBtn');
+    deleteBtn.addEventListener('click', () => {
+        deleteBtn.parentElement.remove();
+    })
 
     itemCard.append(title, description, dueDate, priority, deleteBtn);
 
     todoContainer.appendChild(itemCard);
+
     activeProject.taskList.push(itemCard)
-    // console.log('Nre task list')
-    // console.log(activeProject.taskList)
+    let project = projectSelector.value;
+    // for (let i=0;1<projectList.length;i++) {
+    //     if (projectList[i].name == project) {
+    //         projectList[i].taskList.push(itemCard)
+    //         console.log(projectList[i].name);
+    //         console.log(projectList[i].taskList)
+    //     }else {
+    //         activeProject.taskList.push(itemCard)
+    //     }
+    // }
 }
 submitBtn.addEventListener('click', () => {
     let newItem = new ListItem(newTitle.value, newDes.value, newDueDate.value, newPriority.value);
     displayController(newItem);
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
-
 })
 addBtn.addEventListener('click', () => {
     submitCard.classList.add('active');
     overlay.classList.add('active');
+    removeAllChildrenDOM(projectSelector);
+    for (let i = 0; i < projectList.length; i++) {
+        let option = document.createElement('option');
+        option.value = projectList[i].name;
+        option.innerHTML = projectList[i].name
+        projectSelector.appendChild(option);
+    }
 })
 projectAddBtn.addEventListener('click', () => {
     projectAddForm.classList.add('active');
@@ -114,23 +135,19 @@ projectAddForm.addEventListener('keypress', (e) => {
         let newProject = new Project(name, true);
         projectList.push(newProject);
         newProject.createDom();
-        activeProject = newProject
+        activeProject = newProject;
         projectAddForm.classList.remove('active');
         projectAddForm.value = '';
         newProject.printTask();
     }
 })
-
-
-
 overlay.onclick = function closeOverlay() {
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
   }
 
 
-
 let defaultProject = new Project('Default');
 projectList.push(defaultProject);
 defaultProject.createDom();
-activeProject = defaultProject
+activeProject = defaultProject;
