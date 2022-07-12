@@ -40,8 +40,11 @@ function Project (name, isActive) {
         let projectDOM = document.createElement('div');
         projectDOM.textContent = name;
         projectDOM.classList.add('project');
-
+        // let taskHeader = document.createElement('div');
+        // taskHeader.textContent = name;
+        // taskHeader.classList.add('task-header');
         projectListDOM.prepend(projectDOM);
+        // todoContainer.prepend(taskHeader);
         makeActive(projectDOM, project);
         projectDOM.addEventListener('click', () => {
             makeActive(projectDOM, project);
@@ -53,15 +56,20 @@ function Project (name, isActive) {
         for (let i = 0; i < projects.length; i++) {
             projects[i].classList.remove('active');
         }
-        
         activeProject = project;
         isActive = true;
         projectDOM.classList.add('active');
+        printTask();
     }
     let printTask = function () {
+        let taskHeader = document.createElement('div');
+        taskHeader.textContent = name;
+        taskHeader.classList.add('task-header');
+        // alert('printTask Ran');
         while (todoContainer.firstChild) {
             todoContainer.removeChild(todoContainer.firstChild);
         }
+        todoContainer.prepend(taskHeader);
         for (let i = 0; i < taskList.length; i++) {
             todoContainer.appendChild(taskList[i]);
         }
