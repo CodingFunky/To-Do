@@ -33,24 +33,29 @@ function Project (name, isActive) {
     this.name = name;
     this.isActive = true;
     let taskList = [];
+    let self = this;
 
-    let createDom = function () {
+    let createDom = function (project) {
         let projectDOM = document.createElement('div');
         projectDOM.textContent = name;
         projectDOM.classList.add('project');
-        activeProject = projectDOM;
+
         projectListDOM.prepend(projectDOM);
-        makeActive(projectDOM);
+        makeActive(projectDOM, project);
         projectDOM.addEventListener('click', () => {
             makeActive(projectDOM);
             printTask();
         })
     }
-    let makeActive = function (projectDOM) {
+    let makeActive = function (projectDOM, project) {
         let projects = projectListDOM.children;
         for (let i = 0; i < projects.length; i++) {
             projects[i].classList.remove('active');
         }
+        
+        activeProject = project;
+        console.log('project')
+        console.log(project)
         isActive = true;
         projectDOM.classList.add('active');
     }
@@ -88,15 +93,24 @@ function displayController(newItem) {
 
     let deleteBtn = document.createElement('i');
     deleteBtn.classList.add('far', 'fa-trash-alt', 'deleteBtn');
-    deleteBtn.addEventListener('click', () => {
-        deleteBtn.parentElement.remove();
+    deleteBtn.addEventListener('click', (e) => {
+        let index = activeProject.taskList.indexOf(deleteBtn.parentElement)
+        if (index !== -1) {
+            activeProject.taskList.splice(index, 1);
+        }
+        itemCard.remove();
+
     })
 
     itemCard.append(title, description, dueDate, priority, deleteBtn);
 
     todoContainer.appendChild(itemCard);
-
+    console.log('activeProject')
+    console.log(activeProject)
+    console.log('item card')
+    console.log(itemCard)
     activeProject.taskList.push(itemCard)
+
     let project = projectSelector.value;
     // for (let i=0;1<projectList.length;i++) {
     //     if (projectList[i].name == project) {
@@ -134,7 +148,7 @@ projectAddForm.addEventListener('keypress', (e) => {
         let name = projectAddForm.value;
         let newProject = new Project(name, true);
         projectList.push(newProject);
-        newProject.createDom();
+        newProject.createDom(newProject);
         activeProject = newProject;
         projectAddForm.classList.remove('active');
         projectAddForm.value = '';
