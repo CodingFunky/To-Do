@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import './style.css';
 import { removeAllChildrenDOM } from './remove_all_child_DOM';
 
@@ -43,7 +44,7 @@ function Project (name, isActive) {
         projectListDOM.prepend(projectDOM);
         makeActive(projectDOM, project);
         projectDOM.addEventListener('click', () => {
-            makeActive(projectDOM);
+            makeActive(projectDOM, project);
             printTask();
         })
     }
@@ -163,5 +164,6 @@ overlay.onclick = function closeOverlay() {
 
 let defaultProject = new Project('Default');
 projectList.push(defaultProject);
-defaultProject.createDom();
 activeProject = defaultProject;
+defaultProject.createDom(defaultProject);
+
