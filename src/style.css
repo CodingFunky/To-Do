@@ -86,7 +86,7 @@ p {
 }
 
 #todo-container {
-    /* padding: 55px; */
+    padding: 55px;
     width: 70%;
 }
 .task-header {
