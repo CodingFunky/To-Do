@@ -17936,8 +17936,6 @@ function Project (name, isActive) {
         }
         
         activeProject = project;
-        console.log('project')
-        console.log(project)
         isActive = true;
         projectDOM.classList.add('active');
     }
@@ -17987,10 +17985,6 @@ function displayController(newItem) {
     itemCard.append(title, description, dueDate, priority, deleteBtn);
 
     todoContainer.appendChild(itemCard);
-    console.log('activeProject')
-    console.log(activeProject)
-    console.log('item card')
-    console.log(itemCard)
     activeProject.taskList.push(itemCard)
 
     let project = projectSelector.value;
@@ -18004,11 +17998,17 @@ function displayController(newItem) {
     //     }
     // }
 }
+
+function clearForm() {
+    newTitle.value = '';
+    newDes.value = '';
+}
 submitBtn.addEventListener('click', () => {
     let newItem = new ListItem(newTitle.value, newDes.value, newDueDate.value, newPriority.value);
     displayController(newItem);
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
+    clearForm();
 })
 addBtn.addEventListener('click', () => {
     submitCard.classList.add('active');
@@ -18019,6 +18019,7 @@ addBtn.addEventListener('click', () => {
         option.value = projectList[i].name;
         option.innerHTML = projectList[i].name
         projectSelector.appendChild(option);
+        newTitle.focus();
     }
 })
 projectAddBtn.addEventListener('click', () => {
@@ -18040,6 +18041,7 @@ projectAddForm.addEventListener('keypress', (e) => {
 overlay.onclick = function closeOverlay() {
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
+    clearForm();
   }
 
 
