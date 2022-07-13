@@ -4,7 +4,7 @@ import { removeAllChildrenDOM } from './remove_all_child_DOM';
 
 // # is id . is class
 const newTitle = document.querySelector('#itemTitle');
-const newDes = document.querySelector('#itemDes');
+const newDes = document.querySelector('#itemDescBox');
 const newDueDate = document.querySelector('#dueDate');
 const newPriority = document.querySelector('#priority');
 const domHero = document.querySelector('#hero');
@@ -89,6 +89,9 @@ function displayController(newItem) {
         itemCard.remove();
         completedTasks.push(itemCard)
     })
+    let checkMark = document.createElement('span');
+    checkMark.classList.add('checkMark')
+    checkMark.innerHTML = ('&#10003;')
     let title = document.createElement('h4');
     title.classList.add('itemTitle');
     title.textContent = (newItem.title);

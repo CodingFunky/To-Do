@@ -95,35 +95,53 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-bottom: solid rgb(227, 222, 222) 1px;
     margin: 40px 40px;
 
 }
 .itemCard > * {
-    width: 80%;
-    height: 30px;
-    border-top: none;
-    text-align: center;
+    /* width: 80%; */
+    /* height: 30px; */
+    /* text-align: center; */
     /* border-bottom: solid rgb(0, 0, 0) 1px; */
 }
 .completeBtn {
     height: 15px;
-    width: 55px;
+    width: 15px;
     border: solid black 1px;
     border-radius: 50%;
 }
 .completeBtn:hover {
     background-color: #db4c3f;
+    transform: scale(1.2);
 }
 .task-header {
     font-weight: bold;
     font-size: 25px;
 }
+.itemDesc {
+    display: block;
+    overflow: hidden;
+    width: 30%;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
 .deleteBtn {
     width: 10%;
 }
 .itemPriority {
+    width: 10%;
+}
+.dueDate-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.priority-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .submitCard {
     border-radius: 5%;
@@ -147,18 +165,8 @@ p {
     transform: translate(0%, -130%) scale(1);
     display:flex;
 }
-#itemDes {
-
-}
-.dueDate-Container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.priority-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#itemDescBox {
+    text-overflow: ellipsis
 }
 .overlay {
     position: fixed;
