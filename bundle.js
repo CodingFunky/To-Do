@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    display: flex;\n    margin: 15px;\n    gap: 15px;\n}\n.right-nav {\n    display: flex;\n    gap: 15px;\n    margin: 15px;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    background-color: rgb(253, 250, 250);\n    width: 275px;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    margin-top: 40px;\n}\n#project-title {\n    font-weight: 600;\n}\n.addProject-form {\n    align-self: center;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 24px;\n}\n.project {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n    /* border-bottom: solid black 1px; */\n    border-radius: 40px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n.addProject-form {\n    display: none;\n}\n.addProject-form.active {\n    display: flex;\n}\n#todo-hero {\n    padding: 55px;\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n\n}\n#todo-container {\n    /* padding: 55px; */\n    width: 90%;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin: 40px 40px;\n\n}\n.itemCard > * {\n    /* width: 80%; */\n    /* height: 30px; */\n    /* text-align: center; */\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.completeBtn {\n    height: 15px;\n    width: 15px;\n    border: solid black 1px;\n    border-radius: 50%;\n    cursor: pointer;\n}\n.completeBtn:hover {\n    /* background-color: #db4c3f; */\n    transform: scale(1.1);\n}\n.checkMark {\n    color: white;\n}\n.checkMark:hover {\n    color: #db4c3f;\n}\n.task-header {\n    font-weight: bold;\n    font-size: 25px;\n}\n.itemDesc {\n    display: block;\n    overflow: hidden;\n    width: 30%;\n    white-space: nowrap;\n    text-overflow: ellipsis\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n    width: 10%;\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n.altAdd-container {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    gap: 8px;\n    margin-top: 30px;\n    width: 25%;\n}\n.altAdd-container:hover {\n    cursor: pointer;\n    color: #db4c3f;\n    transform: scale(1.1);\n}\n.plus-sign {\n}\n.altAddBtn {\n    /* width: 50%;\n    align-self: center;\n    text-align: center;\n    margin-top: 30px; */\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDescBox {\n    text-overflow: ellipsis\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;AACA;IACI,WAAW;AACf;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;AACA;IACI,yBAAyB;IACzB,YAAY;IACZ,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,YAAY;IACZ,SAAS;AACb;AACA;IACI,aAAa;IACb,SAAS;IACT,YAAY;AAChB;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,kBAAkB;AACtB;AACA;IACI,oCAAoC;IACpC,YAAY;IACZ,aAAa;AACjB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;AAC3B;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,gBAAgB;AACpB;AACA;IACI,gBAAgB;AACpB;AACA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,6BAA6B;IAC7B,aAAa;AACjB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,kBAAkB;AACtB;AACA;IACI,oCAAoC;IACpC,oCAAoC;IACpC,mBAAmB;AACvB;AACA;IACI,YAAY;AAChB;AACA;IACI,aAAa;AACjB;AACA;IACI,aAAa;AACjB;AACA;IACI,aAAa;IACb,UAAU;IACV,aAAa;IACb,sBAAsB;;AAE1B;AACA;IACI,mBAAmB;IACnB,UAAU;AACd;AACA;IACI,WAAW;IACX,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,8BAA8B;IAC9B,2CAA2C;IAC3C,iBAAiB;;AAErB;AACA;IACI,gBAAgB;IAChB,kBAAkB;IAClB,wBAAwB;IACxB,2CAA2C;AAC/C;AACA;IACI,YAAY;IACZ,WAAW;IACX,uBAAuB;IACvB,kBAAkB;IAClB,eAAe;AACnB;AACA;IACI,+BAA+B;IAC/B,qBAAqB;AACzB;AACA;IACI,YAAY;AAChB;AACA;IACI,cAAc;AAClB;AACA;IACI,iBAAiB;IACjB,eAAe;AACnB;AACA;IACI,cAAc;IACd,gBAAgB;IAChB,UAAU;IACV,mBAAmB;IACnB;AACJ;AACA;IACI,UAAU;AACd;AACA;IACI,UAAU;AACd;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,mBAAmB;IACnB,QAAQ;IACR,gBAAgB;IAChB,UAAU;AACd;AACA;IACI,eAAe;IACf,cAAc;IACd,qBAAqB;AACzB;AACA;AACA;AACA;IACI;;;uBAGmB;AACvB;AACA;IACI,iBAAiB;IACjB,eAAe;IACf,SAAS;IACT,SAAS;IACT,iBAAiB;IACjB,UAAU;IACV,4BAA4B;IAC5B,yCAAyC;IACzC,uBAAuB;IACvB,uBAAuB;IACvB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,aAAa;AACjB;AACA;IACI,wCAAwC;IACxC,YAAY;AAChB;AACA;IACI;AACJ;AACA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,WAAW;IACX,YAAY;IACZ,oCAAoC;IACpC,UAAU;EACZ;EACA;MACI,cAAc;EAClB","sourcesContent":["body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    display: flex;\n    margin: 15px;\n    gap: 15px;\n}\n.right-nav {\n    display: flex;\n    gap: 15px;\n    margin: 15px;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    background-color: rgb(253, 250, 250);\n    width: 275px;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    margin-top: 40px;\n}\n#project-title {\n    font-weight: 600;\n}\n.addProject-form {\n    align-self: center;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 24px;\n}\n.project {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n    /* border-bottom: solid black 1px; */\n    border-radius: 40px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n.addProject-form {\n    display: none;\n}\n.addProject-form.active {\n    display: flex;\n}\n#todo-hero {\n    padding: 55px;\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n\n}\n#todo-container {\n    /* padding: 55px; */\n    width: 90%;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin: 40px 40px;\n\n}\n.itemCard > * {\n    /* width: 80%; */\n    /* height: 30px; */\n    /* text-align: center; */\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.completeBtn {\n    height: 15px;\n    width: 15px;\n    border: solid black 1px;\n    border-radius: 50%;\n    cursor: pointer;\n}\n.completeBtn:hover {\n    /* background-color: #db4c3f; */\n    transform: scale(1.1);\n}\n.checkMark {\n    color: white;\n}\n.checkMark:hover {\n    color: #db4c3f;\n}\n.task-header {\n    font-weight: bold;\n    font-size: 25px;\n}\n.itemDesc {\n    display: block;\n    overflow: hidden;\n    width: 30%;\n    white-space: nowrap;\n    text-overflow: ellipsis\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n    width: 10%;\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n.altAdd-container {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    gap: 8px;\n    margin-top: 30px;\n    width: 25%;\n}\n.altAdd-container:hover {\n    cursor: pointer;\n    color: #db4c3f;\n    transform: scale(1.1);\n}\n.plus-sign {\n}\n.altAddBtn {\n    /* width: 50%;\n    align-self: center;\n    text-align: center;\n    margin-top: 30px; */\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDescBox {\n    text-overflow: ellipsis\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    display: flex;\n    margin: 15px;\n    gap: 15px;\n}\n.right-nav {\n    display: flex;\n    gap: 15px;\n    margin: 15px;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    display: flex;\n    flex-direction: column;\n    background-color: rgb(253, 250, 250);\n    width: 275px;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    font-size: 18px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    gap: 20px;\n    margin-top: 40px;\n    /* padding-right: 10px; */\n}\n#project-title {\n    font-weight: 600;\n}\n#project-addBtn {\n    font-size: 30px;\n    margin-top: 20px;\n    padding-bottom: 5px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 25px;\n    width: 30px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n#project-addBtn:hover {\n    background-color: rgb(231, 228, 228);\n}\n.addProject-form {\n    align-self: center;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 20px;\n}\n.project {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n.project:hover {\n    background-color: rgb(231, 228, 228);\n\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n}\n.taskNum {\n    color: rgb(186, 176, 176);\n    padding-right: 15px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n.addProject-form {\n    display: none;\n}\n.addProject-form.active {\n    display: flex;\n}\n#todo-hero {\n    padding: 55px;\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n\n}\n#todo-container {\n    /* padding: 55px; */\n    width: 90%;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin-top: 40px;\n\n}\n.itemCard > * {\n    /* width: 80%; */\n    /* height: 30px; */\n    /* text-align: center; */\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.completeBtn {\n    height: 17px;\n    width: 17px;\n    border: solid rgb(108, 103, 103) 2px;\n    border-radius: 50%;\n    cursor: pointer;\n    text-align: center;\n}\n.completeBtn:hover {\n    /* background-color: #db4c3f; */\n    transform: scale(1.1);\n}\n.checkMark {\n    color: white;\n}\n.checkMark:hover {\n    color: #db4c3f;\n}\n.task-header {\n    font-weight: 600;\n    font-size: 22px;\n}\n.itemDesc {\n    color: rgb(108, 103, 103);\n    display: block;\n    overflow: hidden;\n    width: 30%;\n    white-space: nowrap;\n    text-overflow: ellipsis\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n    width: 10%;\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n.altAdd-container {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    margin-top: 50px;\n    margin-left: 30%;\n    width: 25%;\n    justify-content: center;\n}\n.altAdd-container:hover {\n    cursor: pointer;\n    color: #db4c3f;\n    transform: scale(1.1);\n}\n.plus-sign {\n\n}\n.altAddBtn {\n    /* width: 50%;\n    align-self: center;\n    text-align: center;\n    margin-top: 30px; */\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDescBox {\n    text-overflow: ellipsis\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;AACA;IACI,WAAW;AACf;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;AACA;IACI,yBAAyB;IACzB,YAAY;IACZ,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,YAAY;IACZ,SAAS;AACb;AACA;IACI,aAAa;IACb,SAAS;IACT,YAAY;AAChB;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,kBAAkB;AACtB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,oCAAoC;IACpC,YAAY;IACZ,aAAa;AACjB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;AAC3B;AACA;IACI,eAAe;IACf,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,SAAS;IACT,gBAAgB;IAChB,yBAAyB;AAC7B;AACA;IACI,gBAAgB;AACpB;AACA;IACI,eAAe;IACf,gBAAgB;IAChB,mBAAmB;IACnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,eAAe;IACf,mBAAmB;AACvB;AACA;IACI,oCAAoC;AACxC;AACA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,6BAA6B;IAC7B,aAAa;AACjB;AACA;IACI,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,mBAAmB;AACvB;AACA;IACI,oCAAoC;;AAExC;AACA;IACI,oCAAoC;AACxC;AACA;IACI,yBAAyB;IACzB,mBAAmB;AACvB;AACA;IACI,YAAY;AAChB;AACA;IACI,aAAa;AACjB;AACA;IACI,aAAa;AACjB;AACA;IACI,aAAa;IACb,UAAU;IACV,aAAa;IACb,sBAAsB;;AAE1B;AACA;IACI,mBAAmB;IACnB,UAAU;AACd;AACA;IACI,WAAW;IACX,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,8BAA8B;IAC9B,2CAA2C;IAC3C,gBAAgB;;AAEpB;AACA;IACI,gBAAgB;IAChB,kBAAkB;IAClB,wBAAwB;IACxB,2CAA2C;AAC/C;AACA;IACI,YAAY;IACZ,WAAW;IACX,oCAAoC;IACpC,kBAAkB;IAClB,eAAe;IACf,kBAAkB;AACtB;AACA;IACI,+BAA+B;IAC/B,qBAAqB;AACzB;AACA;IACI,YAAY;AAChB;AACA;IACI,cAAc;AAClB;AACA;IACI,gBAAgB;IAChB,eAAe;AACnB;AACA;IACI,yBAAyB;IACzB,cAAc;IACd,gBAAgB;IAChB,UAAU;IACV,mBAAmB;IACnB;AACJ;AACA;IACI,UAAU;AACd;AACA;IACI,UAAU;AACd;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,QAAQ;IACR,gBAAgB;IAChB,gBAAgB;IAChB,UAAU;IACV,uBAAuB;AAC3B;AACA;IACI,eAAe;IACf,cAAc;IACd,qBAAqB;AACzB;AACA;;AAEA;AACA;IACI;;;uBAGmB;AACvB;AACA;IACI,iBAAiB;IACjB,eAAe;IACf,SAAS;IACT,SAAS;IACT,iBAAiB;IACjB,UAAU;IACV,4BAA4B;IAC5B,yCAAyC;IACzC,uBAAuB;IACvB,uBAAuB;IACvB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,aAAa;AACjB;AACA;IACI,wCAAwC;IACxC,YAAY;AAChB;AACA;IACI;AACJ;AACA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,WAAW;IACX,YAAY;IACZ,oCAAoC;IACpC,UAAU;EACZ;EACA;MACI,cAAc;EAClB","sourcesContent":["body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    display: flex;\n    margin: 15px;\n    gap: 15px;\n}\n.right-nav {\n    display: flex;\n    gap: 15px;\n    margin: 15px;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    display: flex;\n    flex-direction: column;\n    background-color: rgb(253, 250, 250);\n    width: 275px;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    font-size: 18px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    gap: 20px;\n    margin-top: 40px;\n    /* padding-right: 10px; */\n}\n#project-title {\n    font-weight: 600;\n}\n#project-addBtn {\n    font-size: 30px;\n    margin-top: 20px;\n    padding-bottom: 5px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 25px;\n    width: 30px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n#project-addBtn:hover {\n    background-color: rgb(231, 228, 228);\n}\n.addProject-form {\n    align-self: center;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 20px;\n}\n.project {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n.project:hover {\n    background-color: rgb(231, 228, 228);\n\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n}\n.taskNum {\n    color: rgb(186, 176, 176);\n    padding-right: 15px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n.addProject-form {\n    display: none;\n}\n.addProject-form.active {\n    display: flex;\n}\n#todo-hero {\n    padding: 55px;\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n\n}\n#todo-container {\n    /* padding: 55px; */\n    width: 90%;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin-top: 40px;\n\n}\n.itemCard > * {\n    /* width: 80%; */\n    /* height: 30px; */\n    /* text-align: center; */\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.completeBtn {\n    height: 17px;\n    width: 17px;\n    border: solid rgb(108, 103, 103) 2px;\n    border-radius: 50%;\n    cursor: pointer;\n    text-align: center;\n}\n.completeBtn:hover {\n    /* background-color: #db4c3f; */\n    transform: scale(1.1);\n}\n.checkMark {\n    color: white;\n}\n.checkMark:hover {\n    color: #db4c3f;\n}\n.task-header {\n    font-weight: 600;\n    font-size: 22px;\n}\n.itemDesc {\n    color: rgb(108, 103, 103);\n    display: block;\n    overflow: hidden;\n    width: 30%;\n    white-space: nowrap;\n    text-overflow: ellipsis\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n    width: 10%;\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n.altAdd-container {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    margin-top: 50px;\n    margin-left: 30%;\n    width: 25%;\n    justify-content: center;\n}\n.altAdd-container:hover {\n    cursor: pointer;\n    color: #db4c3f;\n    transform: scale(1.1);\n}\n.plus-sign {\n\n}\n.altAddBtn {\n    /* width: 50%;\n    align-self: center;\n    text-align: center;\n    margin-top: 30px; */\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDescBox {\n    text-overflow: ellipsis\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17914,17 +17914,76 @@ function ListItem (title, description, dueDate, priority, projectID) {
     this.dueDate = dueDate;
     this.priority = priority;
     this.projectID = projectID;
+
+    function createProjectDOM(newItem) {
+        let itemCard = document.createElement('div');
+        itemCard.classList.add('itemCard');
+    
+        let completeBtn = document.createElement('div')
+        completeBtn.classList.add('completeBtn')
+        completeBtn.addEventListener('click', (e) => {
+            let index = activeProject.taskList.indexOf(completeBtn.parentElement)
+            if (index !== -1) {
+                activeProject.taskList.splice(index, 1);
+            }
+            itemCard.remove();
+            completedTasks.push(itemCard)
+        })
+        let checkMark = document.createElement('span');
+        checkMark.classList.add('checkMark')
+        checkMark.innerHTML = ('&#10003;')
+        completeBtn.appendChild(checkMark);
+        let title = document.createElement('h4');
+        title.classList.add('itemTitle');
+        title.textContent = (newItem.title);
+    
+        let description = document.createElement('p');
+        description.classList.add('itemDesc');
+        description.textContent = (newItem.description);
+    
+        let dueDate = document.createElement('p');
+        dueDate.classList.add('itemDueDate');
+        dueDate.textContent = (newItem.dueDate);
+    
+        let priority = document.createElement('p');
+        priority.classList.add('itemPriority');
+        priority.textContent = (newItem.priority);
+    
+        itemCard.append(completeBtn, title, description, dueDate, priority);
+    
+        // todoContainer.appendChild(itemCard);
+        // activeProject.taskList.push(itemCard)
+    
+        let projectSelected = projectSelector.value;
+        if (projectSelected == activeProject.name) {
+            todoContainer.appendChild(itemCard);
+            activeProject.updateCounter();
+        }
+        projectList.forEach(project => {
+            if (projectSelected == project.name) {
+                project.taskList.push(itemCard)
+                project.updateCounter();
+            }
+        });
+    }
+    return {createProjectDOM}
 }
 function Project (name, isActive) {
     this.name = name;
     this.isActive = true;
     let taskList = [];
-    let self = this;
+    let taskNumDOM = document.createElement('div')
+    taskNumDOM.classList.add('taskNum')
 
     let createDom = function (project) {
         let projectDOM = document.createElement('div');
         projectDOM.textContent = name;
         projectDOM.classList.add('project');
+
+        taskNumDOM.textContent = taskList.length
+
+        projectDOM.appendChild(taskNumDOM)
+
         projectListDOM.prepend(projectDOM);
         makeActive(projectDOM, project);
         projectDOM.addEventListener('click', () => {
@@ -17961,87 +18020,33 @@ function Project (name, isActive) {
             submitCard.classList.add('active');
             overlay.classList.add('active');
             (0,_remove_all_child_DOM__WEBPACK_IMPORTED_MODULE_2__.removeAllChildrenDOM)(projectSelector);
-            for (let i = 0; i < projectList.length; i++) {
-                let option = document.createElement('option');
-                option.value = projectList[i].name;
-                option.innerHTML = projectList[i].name
-                projectSelector.appendChild(option);
-                newTitle.focus();
-            }
+            printOptions();
         });
     }
-  
-    return{createDom, makeActive, printTask, taskList, name, isActive};
-}
-
-function displayController(newItem) {
-    let itemCard = document.createElement('div');
-    itemCard.classList.add('itemCard');
-
-    let completeBtn = document.createElement('div')
-    completeBtn.classList.add('completeBtn')
-    completeBtn.addEventListener('click', (e) => {
-        let index = activeProject.taskList.indexOf(completeBtn.parentElement)
-        if (index !== -1) {
-            activeProject.taskList.splice(index, 1);
-        }
-        itemCard.remove();
-        completedTasks.push(itemCard)
-    })
-    let checkMark = document.createElement('span');
-    checkMark.classList.add('checkMark')
-    checkMark.innerHTML = ('&#10003;')
-    completeBtn.appendChild(checkMark);
-    let title = document.createElement('h4');
-    title.classList.add('itemTitle');
-    title.textContent = (newItem.title);
-
-    let description = document.createElement('p');
-    description.classList.add('itemDesc');
-    description.textContent = (newItem.description);
-
-    let dueDate = document.createElement('p');
-    dueDate.classList.add('itemDueDate');
-    dueDate.textContent = (newItem.dueDate);
-
-    let priority = document.createElement('p');
-    priority.classList.add('itemPriority');
-    priority.textContent = (newItem.priority);
-
-    let deleteBtn = document.createElement('i');
-    deleteBtn.classList.add('far', 'fa-trash-alt', 'deleteBtn');
-    deleteBtn.addEventListener('click', (e) => {
-        let index = activeProject.taskList.indexOf(deleteBtn.parentElement)
-        if (index !== -1) {
-            activeProject.taskList.splice(index, 1);
-        }
-        itemCard.remove();
-
-    })
-
-    itemCard.append(completeBtn, title, description, dueDate, priority, deleteBtn);
-
-    // todoContainer.appendChild(itemCard);
-    // activeProject.taskList.push(itemCard)
-
-    let projectSelected = projectSelector.value;
-    if (projectSelected == activeProject.name) {
-        todoContainer.appendChild(itemCard);
+    let updateCounter = function () {
+        // taskNumDOM.textContent = activeProject.length;
+        taskNumDOM.textContent = taskList.length
     }
-    projectList.forEach(project => {
-        if (projectSelected == project.name) {
-            project.taskList.push(itemCard)
-        }
-    });
+  
+    return{createDom, makeActive, printTask, updateCounter, taskList, name, isActive};
 }
-
+function printOptions() {
+    for (let i = 0; i < projectList.length; i++) {
+        let option = document.createElement('option');
+        option.value = projectList[i].name;
+        option.innerHTML = projectList[i].name
+        projectSelector.appendChild(option);
+        newTitle.focus();
+        projectSelector.value = activeProject.name;
+    }
+}
 function clearForm() {
     newTitle.value = '';
     newDes.value = '';
 }
 submitBtn.addEventListener('click', () => {
     let newItem = new ListItem(newTitle.value, newDes.value, newDueDate.value, newPriority.value);
-    displayController(newItem);
+    newItem.createProjectDOM(newItem);
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
     clearForm();
@@ -18050,13 +18055,7 @@ addBtn.addEventListener('click', () => {
     submitCard.classList.add('active');
     overlay.classList.add('active');
     (0,_remove_all_child_DOM__WEBPACK_IMPORTED_MODULE_2__.removeAllChildrenDOM)(projectSelector);
-    for (let i = 0; i < projectList.length; i++) {
-        let option = document.createElement('option');
-        option.value = projectList[i].name;
-        option.innerHTML = projectList[i].name
-        projectSelector.appendChild(option);
-        newTitle.focus();
-    }
+    printOptions();
 })
 projectAddBtn.addEventListener('click', () => {
     projectAddForm.classList.add('active');
