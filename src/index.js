@@ -46,6 +46,7 @@ function ListItem (title, description, dueDate, priority, projectID) {
             }
             itemCard.remove();
             completedTasks.push(itemCard)
+            activeProject.updateCounter();
         })
         let checkMark = document.createElement('span');
         checkMark.classList.add('checkMark')

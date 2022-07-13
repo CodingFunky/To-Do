@@ -4,6 +4,22 @@ body {
 p {
     margin: 0px;
 }
+.btn {
+    cursor: pointer;
+}
+.nav.btn {
+    color: white;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+.nav.btn:hover {
+    background-color: rgb(231, 228, 228);
+    /* opacity: 0.5; */
+}
 #page-container {
     height: 100%;
     width: 100%;
@@ -17,14 +33,20 @@ p {
     align-items: center;
 }
 .left-nav {
+    height: 100%;
     display: flex;
-    margin: 15px;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+    gap: 25px;
 }
 .right-nav {
+    height: 100%;
     display: flex;
-    gap: 15px;
-    margin: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-right: 25px;
 }
 #hero {
     height: 80vh;
@@ -200,14 +222,23 @@ p {
     color: #db4c3f;
     transform: scale(1.1);
 }
-.plus-sign {
-
+.altAdd-container:hover > .alt-plusSign{
+    background-color: #db4c3f;
+    color: white;
 }
-.altAddBtn {
-    /* width: 50%;
-    align-self: center;
+.alt-plusSign {
+    height: 19px;
+    width: 19px;
     text-align: center;
-    margin-top: 30px; */
+    color: #db4c3f;
+    border-radius: 50%;
+}
+/* .alt-plusSign:hover{
+    background-color: #db4c3f;
+    color: white;
+} */
+.altAddBtn-text {
+    color: rgb(150, 145, 145);
 }
 .submitCard {
     border-radius: 5%;
