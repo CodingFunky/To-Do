@@ -17,6 +17,7 @@ const projectAddBtn = document.querySelector('#project-addBtn');
 const projectAddForm = document.querySelector('.addProject-form');
 const todoContainer = document.querySelector('#todo-container');
 const projectSelector = document.querySelector('#project-selector');
+const todoHero = document.querySelector('#todo-hero');
 
 
 let activeProject = []
@@ -65,15 +66,34 @@ function Project (name, isActive) {
             todoContainer.removeChild(todoContainer.firstChild);
         }
         // prepending AFTER elements are removed
-        todoContainer.prepend(taskHeader);
+        todoHero.prepend(taskHeader);
         // printing task list from active project
         for (let i = 0; i < taskList.length; i++) {
             todoContainer.appendChild(taskList[i]);
         }
-        // let altAddBtn = document.createElement('div')
-        // altAddBtn.classList.add('altAddBtn');
-        // altAddBtn.textContent = ('Add Task')
-        // todoContainer.append(altAddBtn);
+        let altAddContainer = document.createElement('div')
+        altAddContainer.classList.add('altAdd-container');
+
+        let plusSign = document.createElement('div')
+        plusSign.classList.add('plus-sign')
+        plusSign.innerHTML = ('&#43;')
+        let altAddBtn = document.createElement('div')
+        altAddBtn.classList.add('altAddBtn');
+        altAddBtn.textContent = ('Add Task')
+        altAddContainer.append(plusSign, altAddBtn)
+        todoHero.append(altAddContainer);
+        altAddContainer.addEventListener('click', (e) => {
+            submitCard.classList.add('active');
+            overlay.classList.add('active');
+            removeAllChildrenDOM(projectSelector);
+            for (let i = 0; i < projectList.length; i++) {
+                let option = document.createElement('option');
+                option.value = projectList[i].name;
+                option.innerHTML = projectList[i].name
+                projectSelector.appendChild(option);
+                newTitle.focus();
+            }
+        });
     }
   
     return{createDom, makeActive, printTask, taskList, name, isActive};
