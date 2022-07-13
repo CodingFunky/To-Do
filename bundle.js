@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    display: flex;\n    margin: 15px;\n    gap: 15px;\n}\n.right-nav {\n    display: flex;\n    gap: 15px;\n    margin: 15px;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    background-color: rgb(253, 250, 250);\n    width: 275px;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    margin-top: 40px;\n}\n#project-title {\n    font-weight: 600;\n}\n.addProject-form {\n    align-self: center;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 24px;\n}\n.project {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n    /* border-bottom: solid black 1px; */\n    border-radius: 40px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n.addProject-form {\n    display: none;\n}\n.addProject-form.active {\n    display: flex;\n}\n\n#todo-container {\n    padding: 55px;\n    width: 70%;\n}\n.task-header {\n    font-weight: bold;\n    font-size: 25px;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: center;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin: 40px 40px;\n\n}\n.itemCard > * {\n    width: 80%;\n    height: 30px;\n    border-top: none;\n    text-align: center;\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDes {\n\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;AACA;IACI,WAAW;AACf;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;AACA;IACI,yBAAyB;IACzB,YAAY;IACZ,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,YAAY;IACZ,SAAS;AACb;AACA;IACI,aAAa;IACb,SAAS;IACT,YAAY;AAChB;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,kBAAkB;AACtB;AACA;IACI,oCAAoC;IACpC,YAAY;IACZ,aAAa;AACjB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;AAC3B;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,gBAAgB;AACpB;AACA;IACI,gBAAgB;AACpB;AACA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,6BAA6B;IAC7B,aAAa;AACjB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,kBAAkB;AACtB;AACA;IACI,oCAAoC;IACpC,oCAAoC;IACpC,mBAAmB;AACvB;AACA;IACI,YAAY;AAChB;AACA;IACI,aAAa;AACjB;AACA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,UAAU;AACd;AACA;IACI,iBAAiB;IACjB,eAAe;AACnB;AACA;IACI,WAAW;IACX,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,uBAAuB;IACvB,2CAA2C;IAC3C,iBAAiB;;AAErB;AACA;IACI,UAAU;IACV,YAAY;IACZ,gBAAgB;IAChB,kBAAkB;IAClB,2CAA2C;AAC/C;AACA;IACI,UAAU;AACd;AACA;AACA;AACA;IACI,iBAAiB;IACjB,eAAe;IACf,SAAS;IACT,SAAS;IACT,iBAAiB;IACjB,UAAU;IACV,4BAA4B;IAC5B,yCAAyC;IACzC,uBAAuB;IACvB,uBAAuB;IACvB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,aAAa;AACjB;AACA;IACI,wCAAwC;IACxC,YAAY;AAChB;AACA;;AAEA;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;AACA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,WAAW;IACX,YAAY;IACZ,oCAAoC;IACpC,UAAU;EACZ;EACA;MACI,cAAc;EAClB","sourcesContent":["body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    display: flex;\n    margin: 15px;\n    gap: 15px;\n}\n.right-nav {\n    display: flex;\n    gap: 15px;\n    margin: 15px;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    background-color: rgb(253, 250, 250);\n    width: 275px;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    margin-top: 40px;\n}\n#project-title {\n    font-weight: 600;\n}\n.addProject-form {\n    align-self: center;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 24px;\n}\n.project {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n    /* border-bottom: solid black 1px; */\n    border-radius: 40px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n.addProject-form {\n    display: none;\n}\n.addProject-form.active {\n    display: flex;\n}\n\n#todo-container {\n    padding: 55px;\n    width: 70%;\n}\n.task-header {\n    font-weight: bold;\n    font-size: 25px;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: center;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin: 40px 40px;\n\n}\n.itemCard > * {\n    width: 80%;\n    height: 30px;\n    border-top: none;\n    text-align: center;\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDes {\n\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    display: flex;\n    margin: 15px;\n    gap: 15px;\n}\n.right-nav {\n    display: flex;\n    gap: 15px;\n    margin: 15px;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    background-color: rgb(253, 250, 250);\n    width: 275px;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    margin-top: 40px;\n}\n#project-title {\n    font-weight: 600;\n}\n.addProject-form {\n    align-self: center;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 24px;\n}\n.project {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n    /* border-bottom: solid black 1px; */\n    border-radius: 40px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n.addProject-form {\n    display: none;\n}\n.addProject-form.active {\n    display: flex;\n}\n\n#todo-container {\n    padding: 55px;\n    width: 70%;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: center;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin: 40px 40px;\n\n}\n.itemCard > * {\n    width: 80%;\n    height: 30px;\n    border-top: none;\n    text-align: center;\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.completeBtn {\n    height: 15px;\n    width: 55px;\n    border: solid black 1px;\n    border-radius: 50%;\n}\n.completeBtn:hover {\n    background-color: #db4c3f;\n}\n.task-header {\n    font-weight: bold;\n    font-size: 25px;\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDes {\n\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;AACA;IACI,WAAW;AACf;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;AACA;IACI,yBAAyB;IACzB,YAAY;IACZ,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,YAAY;IACZ,SAAS;AACb;AACA;IACI,aAAa;IACb,SAAS;IACT,YAAY;AAChB;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,kBAAkB;AACtB;AACA;IACI,oCAAoC;IACpC,YAAY;IACZ,aAAa;AACjB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;AAC3B;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,gBAAgB;AACpB;AACA;IACI,gBAAgB;AACpB;AACA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,6BAA6B;IAC7B,aAAa;AACjB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,kBAAkB;AACtB;AACA;IACI,oCAAoC;IACpC,oCAAoC;IACpC,mBAAmB;AACvB;AACA;IACI,YAAY;AAChB;AACA;IACI,aAAa;AACjB;AACA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,UAAU;AACd;AACA;IACI,WAAW;IACX,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,uBAAuB;IACvB,2CAA2C;IAC3C,iBAAiB;;AAErB;AACA;IACI,UAAU;IACV,YAAY;IACZ,gBAAgB;IAChB,kBAAkB;IAClB,2CAA2C;AAC/C;AACA;IACI,YAAY;IACZ,WAAW;IACX,uBAAuB;IACvB,kBAAkB;AACtB;AACA;IACI,yBAAyB;AAC7B;AACA;IACI,iBAAiB;IACjB,eAAe;AACnB;AACA;IACI,UAAU;AACd;AACA;AACA;AACA;IACI,iBAAiB;IACjB,eAAe;IACf,SAAS;IACT,SAAS;IACT,iBAAiB;IACjB,UAAU;IACV,4BAA4B;IAC5B,yCAAyC;IACzC,uBAAuB;IACvB,uBAAuB;IACvB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,aAAa;AACjB;AACA;IACI,wCAAwC;IACxC,YAAY;AAChB;AACA;;AAEA;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;AACA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,WAAW;IACX,YAAY;IACZ,oCAAoC;IACpC,UAAU;EACZ;EACA;MACI,cAAc;EAClB","sourcesContent":["body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    display: flex;\n    margin: 15px;\n    gap: 15px;\n}\n.right-nav {\n    display: flex;\n    gap: 15px;\n    margin: 15px;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    background-color: rgb(253, 250, 250);\n    width: 275px;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    margin-top: 40px;\n}\n#project-title {\n    font-weight: 600;\n}\n.addProject-form {\n    align-self: center;\n    margin-left: 30px;\n    margin-right: 30px;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 24px;\n}\n.project {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n    /* border-bottom: solid black 1px; */\n    border-radius: 40px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n.addProject-form {\n    display: none;\n}\n.addProject-form.active {\n    display: flex;\n}\n\n#todo-container {\n    padding: 55px;\n    width: 70%;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: center;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin: 40px 40px;\n\n}\n.itemCard > * {\n    width: 80%;\n    height: 30px;\n    border-top: none;\n    text-align: center;\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.completeBtn {\n    height: 15px;\n    width: 55px;\n    border: solid black 1px;\n    border-radius: 50%;\n}\n.completeBtn:hover {\n    background-color: #db4c3f;\n}\n.task-header {\n    font-weight: bold;\n    font-size: 25px;\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDes {\n\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17902,6 +17902,7 @@ const projectSelector = document.querySelector('#project-selector');
 
 let activeProject = []
 let projectList = []
+let completedTasks = []
 
 // Object constructor
 function ListItem (title, description, dueDate, priority, projectID) {
@@ -17921,15 +17922,10 @@ function Project (name, isActive) {
         let projectDOM = document.createElement('div');
         projectDOM.textContent = name;
         projectDOM.classList.add('project');
-        // let taskHeader = document.createElement('div');
-        // taskHeader.textContent = name;
-        // taskHeader.classList.add('task-header');
         projectListDOM.prepend(projectDOM);
-        // todoContainer.prepend(taskHeader);
         makeActive(projectDOM, project);
         projectDOM.addEventListener('click', () => {
             makeActive(projectDOM, project);
-            printTask();
         })
     }
     let makeActive = function (projectDOM, project) {
@@ -17946,23 +17942,34 @@ function Project (name, isActive) {
         let taskHeader = document.createElement('div');
         taskHeader.textContent = name;
         taskHeader.classList.add('task-header');
-        // alert('printTask Ran');
         while (todoContainer.firstChild) {
             todoContainer.removeChild(todoContainer.firstChild);
         }
+        // prepending AFTER elements are removed
         todoContainer.prepend(taskHeader);
+        // printing task list from active project
         for (let i = 0; i < taskList.length; i++) {
             todoContainer.appendChild(taskList[i]);
         }
     }
   
-    return{createDom, makeActive, printTask, taskList, name};
+    return{createDom, makeActive, printTask, taskList, name, isActive};
 }
 
 function displayController(newItem) {
     let itemCard = document.createElement('div');
     itemCard.classList.add('itemCard');
 
+    let completeBtn = document.createElement('div')
+    completeBtn.classList.add('completeBtn')
+    completeBtn.addEventListener('click', (e) => {
+        let index = activeProject.taskList.indexOf(completeBtn.parentElement)
+        if (index !== -1) {
+            activeProject.taskList.splice(index, 1);
+        }
+        itemCard.remove();
+        completedTasks.push(itemCard)
+    })
     let title = document.createElement('h4');
     title.classList.add('itemTitle');
     title.textContent = (newItem.title);
@@ -17990,21 +17997,20 @@ function displayController(newItem) {
 
     })
 
-    itemCard.append(title, description, dueDate, priority, deleteBtn);
+    itemCard.append(completeBtn, title, description, dueDate, priority, deleteBtn);
 
-    todoContainer.appendChild(itemCard);
-    activeProject.taskList.push(itemCard)
+    // todoContainer.appendChild(itemCard);
+    // activeProject.taskList.push(itemCard)
 
-    let project = projectSelector.value;
-    // for (let i=0;1<projectList.length;i++) {
-    //     if (projectList[i].name == project) {
-    //         projectList[i].taskList.push(itemCard)
-    //         console.log(projectList[i].name);
-    //         console.log(projectList[i].taskList)
-    //     }else {
-    //         activeProject.taskList.push(itemCard)
-    //     }
-    // }
+    let projectSelected = projectSelector.value;
+    if (projectSelected == activeProject.name) {
+        todoContainer.appendChild(itemCard);
+    }
+    projectList.forEach(project => {
+        if (projectSelected == project.name) {
+            project.taskList.push(itemCard)
+        }
+    });
 }
 
 function clearForm() {
