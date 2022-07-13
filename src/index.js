@@ -33,17 +33,76 @@ function ListItem (title, description, dueDate, priority, projectID) {
     this.dueDate = dueDate;
     this.priority = priority;
     this.projectID = projectID;
+
+    function createProjectDOM(newItem) {
+        let itemCard = document.createElement('div');
+        itemCard.classList.add('itemCard');
+    
+        let completeBtn = document.createElement('div')
+        completeBtn.classList.add('completeBtn')
+        completeBtn.addEventListener('click', (e) => {
+            let index = activeProject.taskList.indexOf(completeBtn.parentElement)
+            if (index !== -1) {
+                activeProject.taskList.splice(index, 1);
+            }
+            itemCard.remove();
+            completedTasks.push(itemCard)
+        })
+        let checkMark = document.createElement('span');
+        checkMark.classList.add('checkMark')
+        checkMark.innerHTML = ('&#10003;')
+        completeBtn.appendChild(checkMark);
+        let title = document.createElement('h4');
+        title.classList.add('itemTitle');
+        title.textContent = (newItem.title);
+    
+        let description = document.createElement('p');
+        description.classList.add('itemDesc');
+        description.textContent = (newItem.description);
+    
+        let dueDate = document.createElement('p');
+        dueDate.classList.add('itemDueDate');
+        dueDate.textContent = (newItem.dueDate);
+    
+        let priority = document.createElement('p');
+        priority.classList.add('itemPriority');
+        priority.textContent = (newItem.priority);
+    
+        itemCard.append(completeBtn, title, description, dueDate, priority);
+    
+        // todoContainer.appendChild(itemCard);
+        // activeProject.taskList.push(itemCard)
+    
+        let projectSelected = projectSelector.value;
+        if (projectSelected == activeProject.name) {
+            todoContainer.appendChild(itemCard);
+            activeProject.updateCounter();
+        }
+        projectList.forEach(project => {
+            if (projectSelected == project.name) {
+                project.taskList.push(itemCard)
+                project.updateCounter();
+            }
+        });
+    }
+    return {createProjectDOM}
 }
 function Project (name, isActive) {
     this.name = name;
     this.isActive = true;
     let taskList = [];
-    let self = this;
+    let taskNumDOM = document.createElement('div')
+    taskNumDOM.classList.add('taskNum')
 
     let createDom = function (project) {
         let projectDOM = document.createElement('div');
         projectDOM.textContent = name;
         projectDOM.classList.add('project');
+
+        taskNumDOM.textContent = taskList.length
+
+        projectDOM.appendChild(taskNumDOM)
+
         projectListDOM.prepend(projectDOM);
         makeActive(projectDOM, project);
         projectDOM.addEventListener('click', () => {
@@ -80,87 +139,33 @@ function Project (name, isActive) {
             submitCard.classList.add('active');
             overlay.classList.add('active');
             removeAllChildrenDOM(projectSelector);
-            for (let i = 0; i < projectList.length; i++) {
-                let option = document.createElement('option');
-                option.value = projectList[i].name;
-                option.innerHTML = projectList[i].name
-                projectSelector.appendChild(option);
-                newTitle.focus();
-            }
+            printOptions();
         });
     }
-  
-    return{createDom, makeActive, printTask, taskList, name, isActive};
-}
-
-function displayController(newItem) {
-    let itemCard = document.createElement('div');
-    itemCard.classList.add('itemCard');
-
-    let completeBtn = document.createElement('div')
-    completeBtn.classList.add('completeBtn')
-    completeBtn.addEventListener('click', (e) => {
-        let index = activeProject.taskList.indexOf(completeBtn.parentElement)
-        if (index !== -1) {
-            activeProject.taskList.splice(index, 1);
-        }
-        itemCard.remove();
-        completedTasks.push(itemCard)
-    })
-    let checkMark = document.createElement('span');
-    checkMark.classList.add('checkMark')
-    checkMark.innerHTML = ('&#10003;')
-    completeBtn.appendChild(checkMark);
-    let title = document.createElement('h4');
-    title.classList.add('itemTitle');
-    title.textContent = (newItem.title);
-
-    let description = document.createElement('p');
-    description.classList.add('itemDesc');
-    description.textContent = (newItem.description);
-
-    let dueDate = document.createElement('p');
-    dueDate.classList.add('itemDueDate');
-    dueDate.textContent = (newItem.dueDate);
-
-    let priority = document.createElement('p');
-    priority.classList.add('itemPriority');
-    priority.textContent = (newItem.priority);
-
-    let deleteBtn = document.createElement('i');
-    deleteBtn.classList.add('far', 'fa-trash-alt', 'deleteBtn');
-    deleteBtn.addEventListener('click', (e) => {
-        let index = activeProject.taskList.indexOf(deleteBtn.parentElement)
-        if (index !== -1) {
-            activeProject.taskList.splice(index, 1);
-        }
-        itemCard.remove();
-
-    })
-
-    itemCard.append(completeBtn, title, description, dueDate, priority, deleteBtn);
-
-    // todoContainer.appendChild(itemCard);
-    // activeProject.taskList.push(itemCard)
-
-    let projectSelected = projectSelector.value;
-    if (projectSelected == activeProject.name) {
-        todoContainer.appendChild(itemCard);
+    let updateCounter = function () {
+        // taskNumDOM.textContent = activeProject.length;
+        taskNumDOM.textContent = taskList.length
     }
-    projectList.forEach(project => {
-        if (projectSelected == project.name) {
-            project.taskList.push(itemCard)
-        }
-    });
+  
+    return{createDom, makeActive, printTask, updateCounter, taskList, name, isActive};
 }
-
+function printOptions() {
+    for (let i = 0; i < projectList.length; i++) {
+        let option = document.createElement('option');
+        option.value = projectList[i].name;
+        option.innerHTML = projectList[i].name
+        projectSelector.appendChild(option);
+        newTitle.focus();
+        projectSelector.value = activeProject.name;
+    }
+}
 function clearForm() {
     newTitle.value = '';
     newDes.value = '';
 }
 submitBtn.addEventListener('click', () => {
     let newItem = new ListItem(newTitle.value, newDes.value, newDueDate.value, newPriority.value);
-    displayController(newItem);
+    newItem.createProjectDOM(newItem);
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
     clearForm();
@@ -169,13 +174,7 @@ addBtn.addEventListener('click', () => {
     submitCard.classList.add('active');
     overlay.classList.add('active');
     removeAllChildrenDOM(projectSelector);
-    for (let i = 0; i < projectList.length; i++) {
-        let option = document.createElement('option');
-        option.value = projectList[i].name;
-        option.innerHTML = projectList[i].name
-        projectSelector.appendChild(option);
-        newTitle.focus();
-    }
+    printOptions();
 })
 projectAddBtn.addEventListener('click', () => {
     projectAddForm.classList.add('active');
