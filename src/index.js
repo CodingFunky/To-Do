@@ -18,6 +18,8 @@ const projectAddForm = document.querySelector('.addProject-form');
 const todoContainer = document.querySelector('#todo-container');
 const projectSelector = document.querySelector('#project-selector');
 const todoHero = document.querySelector('#todo-hero');
+const taskHeader = document.querySelector('.task-header')
+const altAddContainer = document.querySelector('.altAdd-container')
 
 
 let activeProject = []
@@ -59,29 +61,21 @@ function Project (name, isActive) {
         printTask();
     }
     let printTask = function () {
-        let taskHeader = document.createElement('div');
+
         taskHeader.textContent = name;
-        taskHeader.classList.add('task-header');
+
+        // removes taskList from in-active projects
         while (todoContainer.firstChild) {
             todoContainer.removeChild(todoContainer.firstChild);
         }
+        
         // prepending AFTER elements are removed
         todoHero.prepend(taskHeader);
         // printing task list from active project
         for (let i = 0; i < taskList.length; i++) {
             todoContainer.appendChild(taskList[i]);
         }
-        let altAddContainer = document.createElement('div')
-        altAddContainer.classList.add('altAdd-container');
 
-        let plusSign = document.createElement('div')
-        plusSign.classList.add('plus-sign')
-        plusSign.innerHTML = ('&#43;')
-        let altAddBtn = document.createElement('div')
-        altAddBtn.classList.add('altAddBtn');
-        altAddBtn.textContent = ('Add Task')
-        altAddContainer.append(plusSign, altAddBtn)
-        todoHero.append(altAddContainer);
         altAddContainer.addEventListener('click', (e) => {
             submitCard.classList.add('active');
             overlay.classList.add('active');

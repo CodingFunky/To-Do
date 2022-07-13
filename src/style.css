@@ -167,6 +167,8 @@ p {
 }
 .altAdd-container:hover {
     cursor: pointer;
+    color: #db4c3f;
+    transform: scale(1.1);
 }
 .plus-sign {
 }
