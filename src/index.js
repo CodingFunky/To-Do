@@ -70,6 +70,10 @@ function Project (name, isActive) {
         for (let i = 0; i < taskList.length; i++) {
             todoContainer.appendChild(taskList[i]);
         }
+        // let altAddBtn = document.createElement('div')
+        // altAddBtn.classList.add('altAddBtn');
+        // altAddBtn.textContent = ('Add Task')
+        // todoContainer.append(altAddBtn);
     }
   
     return{createDom, makeActive, printTask, taskList, name, isActive};
@@ -92,6 +96,7 @@ function displayController(newItem) {
     let checkMark = document.createElement('span');
     checkMark.classList.add('checkMark')
     checkMark.innerHTML = ('&#10003;')
+    completeBtn.appendChild(checkMark);
     let title = document.createElement('h4');
     title.classList.add('itemTitle');
     title.textContent = (newItem.title);

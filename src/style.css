@@ -111,10 +111,17 @@ p {
     width: 15px;
     border: solid black 1px;
     border-radius: 50%;
+    cursor: pointer;
 }
 .completeBtn:hover {
-    background-color: #db4c3f;
-    transform: scale(1.2);
+    /* background-color: #db4c3f; */
+    transform: scale(1.1);
+}
+.checkMark {
+    color: white;
+}
+.checkMark:hover {
+    color: #db4c3f;
 }
 .task-header {
     font-weight: bold;
@@ -142,6 +149,12 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.altAddBtn {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    margin-top: 30px;
 }
 .submitCard {
     border-radius: 5%;
