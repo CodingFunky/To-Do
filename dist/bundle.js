@@ -17888,7 +17888,6 @@ const newTitle = document.querySelector('#itemTitle');
 const newDes = document.querySelector('#itemDescBox');
 const newDueDate = document.querySelector('#dueDate');
 const newPriority = document.querySelector('#priority');
-const domHero = document.querySelector('#hero');
 const submitBtn = document.querySelector('#submit');
 const overlay = document.querySelector('.overlay');
 const addBtn = document.querySelector('#addBtn');
@@ -17915,7 +17914,7 @@ function ListItem (title, description, dueDate, priority, projectID) {
     this.priority = priority;
     this.projectID = projectID;
 
-    function createProjectDOM(newItem) {
+    function createDOM(newItem) {
         let itemCard = document.createElement('div');
         itemCard.classList.add('itemCard');
     
@@ -17933,23 +17932,24 @@ function ListItem (title, description, dueDate, priority, projectID) {
         checkMark.classList.add('checkMark')
         checkMark.innerHTML = ('&#10003;')
         completeBtn.appendChild(checkMark);
-        let title = document.createElement('h4');
-        title.classList.add('itemTitle');
-        title.textContent = (newItem.title);
+
+        let titleDOM = document.createElement('h4');
+        titleDOM.classList.add('itemTitle');
+        titleDOM.textContent = (title);
     
-        let description = document.createElement('p');
-        description.classList.add('itemDesc');
-        description.textContent = (newItem.description);
+        let descriptionDOM = document.createElement('p');
+        descriptionDOM.classList.add('itemDesc');
+        descriptionDOM.textContent = (description);
     
-        let dueDate = document.createElement('p');
-        dueDate.classList.add('itemDueDate');
-        dueDate.textContent = (newItem.dueDate);
+        let dueDateDOM = document.createElement('p');
+        dueDateDOM.classList.add('itemDueDate');
+        dueDateDOM.textContent = (dueDate);
     
-        let priority = document.createElement('p');
-        priority.classList.add('itemPriority');
-        priority.textContent = (newItem.priority);
+        let priorityDOM = document.createElement('p');
+        priorityDOM.classList.add('itemPriority');
+        priorityDOM.textContent = (priority);
     
-        itemCard.append(completeBtn, title, description, dueDate, priority);
+        itemCard.append(completeBtn, titleDOM, descriptionDOM, dueDateDOM, priorityDOM);
     
         // todoContainer.appendChild(itemCard);
         // activeProject.taskList.push(itemCard)
@@ -17966,7 +17966,7 @@ function ListItem (title, description, dueDate, priority, projectID) {
             }
         });
     }
-    return {createProjectDOM}
+    return {createDOM}
 }
 function Project (name, isActive) {
     this.name = name;
@@ -18046,7 +18046,7 @@ function clearForm() {
 }
 submitBtn.addEventListener('click', () => {
     let newItem = new ListItem(newTitle.value, newDes.value, newDueDate.value, newPriority.value);
-    newItem.createProjectDOM(newItem);
+    newItem.createDOM(newItem);
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
     clearForm();
