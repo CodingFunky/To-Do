@@ -21,6 +21,7 @@ const projectSelector = document.querySelector('#project-selector');
 
 let activeProject = []
 let projectList = []
+let completedTasks = []
 
 // Object constructor
 function ListItem (title, description, dueDate, priority, projectID) {
@@ -40,15 +41,10 @@ function Project (name, isActive) {
         let projectDOM = document.createElement('div');
         projectDOM.textContent = name;
         projectDOM.classList.add('project');
-        // let taskHeader = document.createElement('div');
-        // taskHeader.textContent = name;
-        // taskHeader.classList.add('task-header');
         projectListDOM.prepend(projectDOM);
-        // todoContainer.prepend(taskHeader);
         makeActive(projectDOM, project);
         projectDOM.addEventListener('click', () => {
             makeActive(projectDOM, project);
-            printTask();
         })
     }
     let makeActive = function (projectDOM, project) {
@@ -65,23 +61,34 @@ function Project (name, isActive) {
         let taskHeader = document.createElement('div');
         taskHeader.textContent = name;
         taskHeader.classList.add('task-header');
-        // alert('printTask Ran');
         while (todoContainer.firstChild) {
             todoContainer.removeChild(todoContainer.firstChild);
         }
+        // prepending AFTER elements are removed
         todoContainer.prepend(taskHeader);
+        // printing task list from active project
         for (let i = 0; i < taskList.length; i++) {
             todoContainer.appendChild(taskList[i]);
         }
     }
   
-    return{createDom, makeActive, printTask, taskList, name};
+    return{createDom, makeActive, printTask, taskList, name, isActive};
 }
 
 function displayController(newItem) {
     let itemCard = document.createElement('div');
     itemCard.classList.add('itemCard');
 
+    let completeBtn = document.createElement('div')
+    completeBtn.classList.add('completeBtn')
+    completeBtn.addEventListener('click', (e) => {
+        let index = activeProject.taskList.indexOf(completeBtn.parentElement)
+        if (index !== -1) {
+            activeProject.taskList.splice(index, 1);
+        }
+        itemCard.remove();
+        completedTasks.push(itemCard)
+    })
     let title = document.createElement('h4');
     title.classList.add('itemTitle');
     title.textContent = (newItem.title);
@@ -109,21 +116,20 @@ function displayController(newItem) {
 
     })
 
-    itemCard.append(title, description, dueDate, priority, deleteBtn);
+    itemCard.append(completeBtn, title, description, dueDate, priority, deleteBtn);
 
-    todoContainer.appendChild(itemCard);
-    activeProject.taskList.push(itemCard)
+    // todoContainer.appendChild(itemCard);
+    // activeProject.taskList.push(itemCard)
 
-    let project = projectSelector.value;
-    // for (let i=0;1<projectList.length;i++) {
-    //     if (projectList[i].name == project) {
-    //         projectList[i].taskList.push(itemCard)
-    //         console.log(projectList[i].name);
-    //         console.log(projectList[i].taskList)
-    //     }else {
-    //         activeProject.taskList.push(itemCard)
-    //     }
-    // }
+    let projectSelected = projectSelector.value;
+    if (projectSelected == activeProject.name) {
+        todoContainer.appendChild(itemCard);
+    }
+    projectList.forEach(project => {
+        if (projectSelected == project.name) {
+            project.taskList.push(itemCard)
+        }
+    });
 }
 
 function clearForm() {

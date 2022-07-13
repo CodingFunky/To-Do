@@ -89,10 +89,6 @@ p {
     padding: 55px;
     width: 70%;
 }
-.task-header {
-    font-weight: bold;
-    font-size: 25px;
-}
 .itemCard {
     width: 100%;
     height: 30px;
@@ -110,6 +106,19 @@ p {
     border-top: none;
     text-align: center;
     /* border-bottom: solid rgb(0, 0, 0) 1px; */
+}
+.completeBtn {
+    height: 15px;
+    width: 55px;
+    border: solid black 1px;
+    border-radius: 50%;
+}
+.completeBtn:hover {
+    background-color: #db4c3f;
+}
+.task-header {
+    font-weight: bold;
+    font-size: 25px;
 }
 .deleteBtn {
     width: 10%;
