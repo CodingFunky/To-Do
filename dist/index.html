@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://kit.fontawesome.com/42cbbfdcde.js" crossorigin="anonymous"></script></head>
+    <script src="https://kit.fontawesome.com/42cbbfdcde.js" crossorigin="anonymous"></script>
 </head>
+</head>
+
 <body>
     <div class="page-container">
         <nav class="nav-bar">
@@ -39,7 +42,9 @@
             <div id="todo-hero">
                 <div class="task-header"></div>
                 <div id="todo-container"></div>
-                <div class="altAdd-container"><span class="alt-plusSign">&#43;</span><div class="altAddBtn-text">Add Task</div></div>
+                <div class="altAdd-container"><span class="alt-plusSign">&#43;</span>
+                    <div class="altAddBtn-text">Add Task</div>
+                </div>
             </div>
         </div>
         <!-- hidden -->
@@ -47,7 +52,7 @@
             <h1 class="cardHeader">New To-Do Item</h1>
             <input type="text" placeholder="Title" id="itemTitle" maxlength="20">
             <textarea type="text" placeholder="description" id="itemDescBox" rows="5" maxlength="180"></textarea>
-            <div class="dueDate-Container">   
+            <div class="dueDate-Container">
                 <label for="dueDate">Due Date</label>
                 <input type="date" name="dueDate" id="dueDate">
             </div>
@@ -63,11 +68,12 @@
                 <option value="default"></option>
             </select>
             <button id='submit' type="submit">submit</button>
-             </div>
-       </div>
-        <footer></footer>
-        <div class="overlay" id="overlay"></div>
+        </div>
+    </div>
+    <footer></footer>
+    <div class="overlay" id="overlay"></div>
     </div>
     <script src="bundle.js" defer></script>
 </body>
+
 </html>

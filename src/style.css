@@ -1,16 +1,20 @@
 body {
     margin: 0;
 }
+
 p {
     margin: 0px;
 }
+
 .btn {
     cursor: pointer;
 }
+
 img {
     height: 20px;
     width: 20px;
 }
+
 .nav.btn {
     color: white;
     height: 30px;
@@ -20,15 +24,18 @@ img {
     align-items: center;
     border-radius: 3px;
 }
+
 .nav.btn:hover {
     background-color: rgb(231, 228, 228);
     /* opacity: 0.5; */
 }
+
 #page-container {
     height: 100%;
     width: 100%;
     display: flex;
 }
+
 .nav-bar {
     background-color: #db4c3f;
     height: 45px;
@@ -36,6 +43,7 @@ img {
     justify-content: space-between;
     align-items: center;
 }
+
 .left-nav {
     height: 100%;
     display: flex;
@@ -44,6 +52,7 @@ img {
     margin-left: 25px;
     gap: 25px;
 }
+
 .right-nav {
     height: 100%;
     display: flex;
@@ -52,6 +61,7 @@ img {
     gap: 25px;
     margin-right: 25px;
 }
+
 #hero {
     height: 80vh;
     width: 100%;
@@ -60,6 +70,7 @@ img {
     /* border: solid black 1px; */
     align-self: center;
 }
+
 .left-sidebar {
     display: flex;
     flex-direction: column;
@@ -67,11 +78,13 @@ img {
     width: 275px;
     height: 100vh;
 }
+
 .project-bar {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .project-header {
     font-size: 18px;
     display: flex;
@@ -81,9 +94,11 @@ img {
     margin-top: 40px;
     /* padding-right: 10px; */
 }
+
 #project-title {
     font-weight: 600;
 }
+
 #project-addBtn {
     font-size: 30px;
     margin-top: 20px;
@@ -96,9 +111,11 @@ img {
     cursor: pointer;
     border-radius: 10px;
 }
+
 #project-addBtn:hover {
     background-color: rgb(231, 228, 228);
 }
+
 .addProject-form {
     width: 55%;
     align-self: center;
@@ -107,18 +124,22 @@ img {
     display: none;
     border: solid lightgray 1px;
 }
+
 .addProject-form:focus {
     outline: none;
     /* border: solid lightgray 2px; */
 }
+
 .addProject-form.active {
     display: flex;
 }
+
 .project-list {
     /* border: solid black 1px; */
     padding: 20px;
     padding-top: 0px;
 }
+
 .project {
     display: flex;
     justify-content: space-between;
@@ -129,20 +150,25 @@ img {
     cursor: pointer;
     border-radius: 10px;
 }
+
 .project:hover {
     background-color: rgb(231, 228, 228);
 
 }
+
 .project.active {
     background-color: rgb(231, 228, 228);
 }
+
 .taskNum {
     color: rgb(186, 176, 176);
     padding-right: 15px;
 }
+
 .fa-thin.fa-plus {
     margin: 20px;
 }
+
 #todo-hero {
     padding: 55px;
     width: 70%;
@@ -150,10 +176,12 @@ img {
     flex-direction: column;
 
 }
+
 #todo-container {
     /* padding: 55px; */
     width: 90%;
 }
+
 .itemCard {
     width: 100%;
     height: 30px;
@@ -165,12 +193,14 @@ img {
     margin-top: 40px;
 
 }
-.itemCard > * {
+
+.itemCard>* {
     /* width: 80%; */
     /* height: 30px; */
     /* text-align: center; */
     /* border-bottom: solid rgb(0, 0, 0) 1px; */
 }
+
 .completeBtn {
     height: 17px;
     width: 17px;
@@ -179,20 +209,25 @@ img {
     cursor: pointer;
     text-align: center;
 }
+
 .completeBtn:hover {
     /* background-color: #db4c3f; */
     transform: scale(1.1);
 }
+
 .checkMark {
     color: white;
 }
+
 .checkMark:hover {
     color: #db4c3f;
 }
+
 .task-header {
     font-weight: 600;
     font-size: 22px;
 }
+
 .itemDesc {
     color: rgb(108, 103, 103);
     display: block;
@@ -201,22 +236,27 @@ img {
     white-space: nowrap;
     text-overflow: ellipsis
 }
+
 .deleteBtn {
     width: 10%;
 }
+
 .itemPriority {
     width: 10%;
 }
+
 .dueDate-Container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .priority-container {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .altAdd-container {
     display: flex;
     flex-direction: row;
@@ -226,15 +266,18 @@ img {
     width: 25%;
     justify-content: center;
 }
+
 .altAdd-container:hover {
     cursor: pointer;
     color: #db4c3f;
     transform: scale(1.1);
 }
-.altAdd-container:hover > .alt-plusSign{
+
+.altAdd-container:hover>.alt-plusSign {
     background-color: #db4c3f;
     color: white;
 }
+
 .alt-plusSign {
     height: 19px;
     width: 19px;
@@ -242,6 +285,7 @@ img {
     color: #db4c3f;
     border-radius: 50%;
 }
+
 /* .alt-plusSign:hover{
     background-color: #db4c3f;
     color: white;
@@ -249,6 +293,7 @@ img {
 .altAddBtn-text {
     color: rgb(150, 145, 145);
 }
+
 .submitCard {
     border-radius: 5%;
     position: fixed;
@@ -267,13 +312,16 @@ img {
     align-self: center;
     display: none;
 }
+
 .submitCard.active {
     transform: translate(0%, -130%) scale(1);
-    display:flex;
+    display: flex;
 }
+
 #itemDescBox {
     text-overflow: ellipsis
 }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -283,7 +331,8 @@ img {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 1;
-  }
-  .overlay.active {
-      display: block;
-  }
+}
+
+.overlay.active {
+    display: block;
+}

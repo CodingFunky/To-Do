@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _, { indexOf } from 'lodash';
 import './style.css';
 import { removeAllChildrenDOM } from './remove_all_child_DOM';
 
@@ -23,20 +23,22 @@ const altAddContainer = document.querySelector('.altAdd-container')
 
 let activeProject = []
 let projectList = []
+let projectListStored = JSON.parse(window.localStorage.getItem('projectList'))
+let tasks = []
 let completedTasks = []
 
 // Object constructor
-function ListItem (title, description, dueDate, priority, projectID) {
+function ListItem(title, description, dueDate, priority, projectID) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
     this.projectID = projectID;
 
-    function createDOM(newItem) {
+    function createTaskListDOM(newItem) {
         let itemCard = document.createElement('div');
         itemCard.classList.add('itemCard');
-    
+
         let completeBtn = document.createElement('div')
         completeBtn.classList.add('completeBtn')
         completeBtn.addEventListener('click', (e) => {
@@ -56,29 +58,29 @@ function ListItem (title, description, dueDate, priority, projectID) {
         let titleDOM = document.createElement('h4');
         titleDOM.classList.add('itemTitle');
         titleDOM.textContent = (title);
-    
+
         let descriptionDOM = document.createElement('p');
         descriptionDOM.classList.add('itemDesc');
         descriptionDOM.textContent = (description);
-    
+
         let dueDateDOM = document.createElement('p');
         dueDateDOM.classList.add('itemDueDate');
         dueDateDOM.textContent = (dueDate);
-    
+
         let priorityDOM = document.createElement('p');
         priorityDOM.classList.add('itemPriority');
         priorityDOM.textContent = (priority);
-    
+
         itemCard.append(completeBtn, titleDOM, descriptionDOM, dueDateDOM, priorityDOM);
-    
-        // todoContainer.appendChild(itemCard);
-        // activeProject.taskList.push(itemCard)
-    
+
+        // Determines which project to add new task to
         let projectSelected = projectSelector.value;
         if (projectSelected == activeProject.name) {
             todoContainer.appendChild(itemCard);
             activeProject.updateCounter();
         }
+
+        // adds task and updates counter for the right project
         projectList.forEach(project => {
             if (projectSelected == project.name) {
                 project.taskList.push(itemCard)
@@ -86,22 +88,20 @@ function ListItem (title, description, dueDate, priority, projectID) {
             }
         });
     }
-    return {createDOM}
+    return { createTaskListDOM }
 }
-function Project (name, isActive) {
+function Project(name, tasks) {
     this.name = name;
-    this.isActive = true;
-    let taskList = [];
+    let taskList = tasks;
     let taskNumDOM = document.createElement('div')
     taskNumDOM.classList.add('taskNum')
 
-    let createDom = function (project) {
+    let createProjectListDOM = function (project) {
         let projectDOM = document.createElement('div');
         projectDOM.textContent = name;
         projectDOM.classList.add('project');
 
         taskNumDOM.textContent = taskList.length
-
         projectDOM.appendChild(taskNumDOM)
 
         projectListDOM.prepend(projectDOM);
@@ -110,16 +110,17 @@ function Project (name, isActive) {
             makeActive(projectDOM, project);
         })
     }
+
     let makeActive = function (projectDOM, project) {
         let projects = projectListDOM.children;
         for (let i = 0; i < projects.length; i++) {
             projects[i].classList.remove('active');
         }
         activeProject = project;
-        isActive = true;
         projectDOM.classList.add('active');
         printTask();
     }
+
     let printTask = function () {
 
         taskHeader.textContent = name;
@@ -128,8 +129,7 @@ function Project (name, isActive) {
         while (todoContainer.firstChild) {
             todoContainer.removeChild(todoContainer.firstChild);
         }
-        
-        // prepending AFTER elements are removed
+
         todoHero.prepend(taskHeader);
         // printing task list from active project
         for (let i = 0; i < taskList.length; i++) {
@@ -143,13 +143,14 @@ function Project (name, isActive) {
             printOptions();
         });
     }
+
     let updateCounter = function () {
-        // taskNumDOM.textContent = activeProject.length;
         taskNumDOM.textContent = taskList.length
     }
-  
-    return{createDom, makeActive, printTask, updateCounter, taskList, name, isActive};
+
+    return { createProjectListDOM, makeActive, printTask, updateCounter, taskList, name };
 }
+
 function printOptions() {
     for (let i = 0; i < projectList.length; i++) {
         let option = document.createElement('option');
@@ -166,9 +167,14 @@ function clearForm() {
 }
 submitBtn.addEventListener('click', () => {
     let newItem = new ListItem(newTitle.value, newDes.value, newDueDate.value, newPriority.value);
-    newItem.createDOM(newItem);
+    newItem.createTaskListDOM(newItem);
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
+    window.localStorage.setItem('projectList', JSON.stringify(projectList))
+    window.localStorage.setItem('taskList', activeProject.taskList.outerHTML);
+    console.log(activeProject.taskList)
+    console.log(window.localStorage.getItem('taskList'))
+    console.log(activeProject.taskList.innerHTML)
     clearForm();
 })
 addBtn.addEventListener('click', () => {
@@ -182,11 +188,12 @@ projectAddBtn.addEventListener('click', () => {
     projectAddForm.focus();
 })
 projectAddForm.addEventListener('keypress', (e) => {
-    if(e.key === 'Enter') {
+    if (e.key === 'Enter') {
         let name = projectAddForm.value;
-        let newProject = new Project(name, true);
+        let newProject = new Project(name, tasks);
         projectList.push(newProject);
-        newProject.createDom(newProject);
+        window.localStorage.setItem('projectList', JSON.stringify(projectList))
+        newProject.createProjectListDOM(newProject);
         activeProject = newProject;
         projectAddForm.classList.remove('active');
         projectAddForm.value = '';
@@ -197,11 +204,36 @@ overlay.onclick = function closeOverlay() {
     submitCard.classList.remove('active');
     overlay.classList.remove('active');
     clearForm();
-  }
+}
 
+if (!window.localStorage.getItem('projectList')) {
+    let defaultProject = new Project('Default', tasks);
+    projectList.push(defaultProject);
+    activeProject = defaultProject;
+    window.localStorage.setItem('projectList', JSON.stringify(projectList))
+    projectListStored = JSON.parse(window.localStorage.getItem('projectList'))
+    defaultProject.createProjectListDOM(defaultProject);
+} else {
+    projectListStored.forEach((projectStored) => {
+        let project = new Project(projectStored.name, tasks);
+        projectList.push(project)
 
-let defaultProject = new Project('Default');
-projectList.push(defaultProject);
-activeProject = defaultProject;
-defaultProject.createDom(defaultProject);
+        // console.log(project.taskList)
+    })
+    projectListStored.forEach((projectStored) => {
+        let index = projectListStored.indexOf(projectStored)
+        let currentProject = projectList[index];
+        currentProject.createProjectListDOM(currentProject);
+        // let tasks = JSON.parse(window.localStorage.getItem('taskList'));
+        // currentProject.taskList.push(tasks[index])
+
+        // currentProject.createTaskListDOM()
+    })
+
+}
+
+// window.localStorage.clear()
+
+// console.log(activeProject.taskList)
+// console.log(JSON.parse(window.localStorage.getItem('projectList')))
 
