@@ -1,4 +1,3 @@
-import _, { indexOf } from 'lodash';
 import './style.css';
 import { removeAllChildrenDOM } from './remove_all_child_DOM';
 
@@ -17,15 +16,14 @@ const projectAddForm = document.querySelector('.addProject-form');
 const todoContainer = document.querySelector('#todo-container');
 const projectSelector = document.querySelector('#project-selector');
 const todoHero = document.querySelector('#todo-hero');
-const taskHeader = document.querySelector('.task-header')
-const altAddContainer = document.querySelector('.altAdd-container')
+const taskHeader = document.querySelector('.task-header');
+const altAddContainer = document.querySelector('.altAdd-container');
 
-
-let activeProject = []
-let projectList = []
-let projectListStored = JSON.parse(window.localStorage.getItem('projectList'))
-let tasks = []
-let completedTasks = []
+let activeProject = [];
+const projectList = [];
+let projectListStored = JSON.parse(window.localStorage.getItem('projectList'));
+const tasks = [];
+const completedTasks = [];
 
 // Object constructor
 function ListItem(title, description, dueDate, priority, projectID) {
@@ -35,24 +33,24 @@ function ListItem(title, description, dueDate, priority, projectID) {
     this.priority = priority;
     this.projectID = projectID;
 
-    function createTaskListDOM(newItem) {
+    function createTaskListDOM() {
         let itemCard = document.createElement('div');
         itemCard.classList.add('itemCard');
 
-        let completeBtn = document.createElement('div')
-        completeBtn.classList.add('completeBtn')
+        let completeBtn = document.createElement('div');
+        completeBtn.classList.add('completeBtn');
         completeBtn.addEventListener('click', (e) => {
             let index = activeProject.taskList.indexOf(completeBtn.parentElement)
             if (index !== -1) {
                 activeProject.taskList.splice(index, 1);
             }
             itemCard.remove();
-            completedTasks.push(itemCard)
+            completedTasks.push(itemCard);
             activeProject.updateCounter();
         })
         let checkMark = document.createElement('span');
-        checkMark.classList.add('checkMark')
-        checkMark.innerHTML = ('&#10003;')
+        checkMark.classList.add('checkMark');
+        checkMark.innerHTML = ('&#10003;');
         completeBtn.appendChild(checkMark);
 
         let titleDOM = document.createElement('h4');
@@ -83,7 +81,7 @@ function ListItem(title, description, dueDate, priority, projectID) {
         // adds task and updates counter for the right project
         projectList.forEach(project => {
             if (projectSelected == project.name) {
-                project.taskList.push(itemCard)
+                project.taskList.push(itemCard);
                 project.updateCounter();
             }
         });
@@ -93,16 +91,16 @@ function ListItem(title, description, dueDate, priority, projectID) {
 function Project(name, tasks) {
     this.name = name;
     let taskList = tasks;
-    let taskNumDOM = document.createElement('div')
-    taskNumDOM.classList.add('taskNum')
+    let taskNumDOM = document.createElement('div');
+    taskNumDOM.classList.add('taskNum');
 
     let createProjectListDOM = function (project) {
         let projectDOM = document.createElement('div');
         projectDOM.textContent = name;
         projectDOM.classList.add('project');
 
-        taskNumDOM.textContent = taskList.length
-        projectDOM.appendChild(taskNumDOM)
+        taskNumDOM.textContent = taskList.length;
+        projectDOM.appendChild(taskNumDOM);
 
         projectListDOM.prepend(projectDOM);
         makeActive(projectDOM, project);
