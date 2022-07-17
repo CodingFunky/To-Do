@@ -34,12 +34,12 @@ function ListItem(title, description, dueDate, priority, projectID) {
     this.projectID = projectID;
 
     function createTaskListDOM() {
-        let itemCard = document.createElement('div');
+        const itemCard = document.createElement('div');
         itemCard.classList.add('itemCard');
 
         let completeBtn = document.createElement('div');
         completeBtn.classList.add('completeBtn');
-        completeBtn.addEventListener('click', (e) => {
+        completeBtn.addEventListener('click', () => {
             let index = activeProject.taskList.indexOf(completeBtn.parentElement)
             if (index !== -1) {
                 activeProject.taskList.splice(index, 1);

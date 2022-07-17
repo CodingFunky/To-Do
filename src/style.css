@@ -309,8 +309,7 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    align-self: center;
-    display: none;
+    transition: transform 150ms ease-in-out;
 }
 
 .submitCard.active {
