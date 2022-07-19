@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n}\n\np {\n    margin: 0px;\n}\n\n.btn {\n    cursor: pointer;\n}\n\nimg {\n    height: 20px;\n    width: 20px;\n}\n\n.nav.btn {\n    color: white;\n    height: 30px;\n    width: 30px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: 3px;\n}\n\n.nav.btn:hover {\n    background-color: rgb(231, 228, 228);\n    /* opacity: 0.5; */\n}\n\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.left-nav {\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-left: 25px;\n    gap: 25px;\n}\n\n.right-nav {\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 25px;\n    margin-right: 25px;\n}\n\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n\n.left-sidebar {\n    display: flex;\n    flex-direction: column;\n    background-color: #f7f7f7;\n    width: 275px;\n    height: 100vh;\n}\n\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.project-header {\n    font-size: 18px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    gap: 20px;\n    margin-top: 40px;\n    /* padding-right: 10px; */\n}\n\n#project-title {\n    font-weight: 600;\n}\n\n#project-addBtn {\n    font-size: 30px;\n    margin-top: 20px;\n    padding-bottom: 5px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 25px;\n    width: 30px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n\n#project-addBtn:hover {\n    background-color: rgb(231, 228, 228);\n}\n\n.addProject-form {\n    width: 55%;\n    align-self: center;\n    /* margin-left: 30px; */\n    margin-right: 20px;\n    display: none;\n    border: solid lightgray 1px;\n}\n\n.addProject-form:focus {\n    outline: none;\n    /* border: solid lightgray 2px; */\n}\n\n.addProject-form.active {\n    display: flex;\n}\n\n.project-list {\n    /* border: solid black 1px; */\n    padding: 20px;\n    padding-top: 0px;\n}\n\n.project {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n\n.project:hover {\n    background-color: rgb(231, 228, 228);\n\n}\n\n.project.active {\n    background-color: rgb(231, 228, 228);\n}\n\n.taskNum {\n    color: rgb(186, 176, 176);\n    padding-right: 15px;\n}\n\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n\n#todo-hero {\n    padding: 55px;\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n\n}\n\n#todo-container {\n    /* padding: 55px; */\n    width: 90%;\n}\n\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin-top: 40px;\n\n}\n\n.itemCard>* {\n    /* width: 80%; */\n    /* height: 30px; */\n    /* text-align: center; */\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n\n.completeBtn {\n    height: 17px;\n    width: 17px;\n    border: solid rgb(108, 103, 103) 2px;\n    border-radius: 50%;\n    cursor: pointer;\n    text-align: center;\n}\n\n.completeBtn:hover {\n    /* background-color: #db4c3f; */\n    transform: scale(1.1);\n}\n\n.checkMark {\n    color: white;\n}\n\n.checkMark:hover {\n    color: #db4c3f;\n}\n\n.task-header {\n    font-weight: 600;\n    font-size: 22px;\n}\n\n.itemDesc {\n    color: rgb(108, 103, 103);\n    display: block;\n    overflow: hidden;\n    width: 30%;\n    white-space: nowrap;\n    text-overflow: ellipsis\n}\n\n.deleteBtn {\n    width: 10%;\n}\n\n.itemPriority {\n    width: 10%;\n}\n\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n\n.priority-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.altAdd-container {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    margin-top: 50px;\n    margin-left: 30%;\n    width: 25%;\n    justify-content: center;\n}\n\n.altAdd-container:hover {\n    cursor: pointer;\n    color: #db4c3f;\n    transform: scale(1.1);\n}\n\n.altAdd-container:hover>.alt-plusSign {\n    background-color: #db4c3f;\n    color: white;\n}\n\n.alt-plusSign {\n    height: 19px;\n    width: 19px;\n    text-align: center;\n    color: #db4c3f;\n    border-radius: 50%;\n}\n\n/* .alt-plusSign:hover{\n    background-color: #db4c3f;\n    color: white;\n} */\n.altAddBtn-text {\n    color: rgb(150, 145, 145);\n}\n\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    transition: transform 150ms ease-in-out;\n}\n\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display: flex;\n}\n\n#itemDescBox {\n    text-overflow: ellipsis\n}\n\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n}\n\n.overlay.active {\n    display: block;\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["body {\n    margin: 0;\n}\n\np {\n    margin: 0px;\n}\n\n.btn {\n    cursor: pointer;\n}\n\nimg {\n    height: 20px;\n    width: 20px;\n}\n\n.nav.btn {\n    color: white;\n    height: 30px;\n    width: 30px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: 3px;\n}\n\n.nav.btn:hover {\n    background-color: rgb(231, 228, 228);\n    /* opacity: 0.5; */\n}\n\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.left-nav {\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-left: 25px;\n    gap: 25px;\n}\n\n.right-nav {\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 25px;\n    margin-right: 25px;\n}\n\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n\n.left-sidebar {\n    display: flex;\n    flex-direction: column;\n    background-color: #f7f7f7;\n    width: 275px;\n    height: 100vh;\n}\n\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.project-header {\n    font-size: 18px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    gap: 20px;\n    margin-top: 40px;\n    /* padding-right: 10px; */\n}\n\n#project-title {\n    font-weight: 600;\n}\n\n#project-addBtn {\n    font-size: 30px;\n    margin-top: 20px;\n    padding-bottom: 5px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 25px;\n    width: 30px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n\n#project-addBtn:hover {\n    background-color: rgb(231, 228, 228);\n}\n\n.addProject-form {\n    width: 55%;\n    align-self: center;\n    /* margin-left: 30px; */\n    margin-right: 20px;\n    display: none;\n    border: solid lightgray 1px;\n}\n\n.addProject-form:focus {\n    outline: none;\n    /* border: solid lightgray 2px; */\n}\n\n.addProject-form.active {\n    display: flex;\n}\n\n.project-list {\n    /* border: solid black 1px; */\n    padding: 20px;\n    padding-top: 0px;\n}\n\n.project {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n\n.project:hover {\n    background-color: rgb(231, 228, 228);\n\n}\n\n.project.active {\n    background-color: rgb(231, 228, 228);\n}\n\n.taskNum {\n    color: rgb(186, 176, 176);\n    padding-right: 15px;\n}\n\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n\n#todo-hero {\n    padding: 55px;\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n\n}\n\n#todo-container {\n    /* padding: 55px; */\n    width: 90%;\n}\n\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin-top: 40px;\n\n}\n\n.itemCard>* {\n    /* width: 80%; */\n    /* height: 30px; */\n    /* text-align: center; */\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n\n.completeBtn {\n    height: 17px;\n    width: 17px;\n    border: solid rgb(108, 103, 103) 2px;\n    border-radius: 50%;\n    cursor: pointer;\n    text-align: center;\n}\n\n.completeBtn:hover {\n    /* background-color: #db4c3f; */\n    transform: scale(1.1);\n}\n\n.checkMark {\n    color: white;\n}\n\n.checkMark:hover {\n    color: #db4c3f;\n}\n\n.task-header {\n    font-weight: 600;\n    font-size: 22px;\n}\n\n.itemDesc {\n    color: rgb(108, 103, 103);\n    display: block;\n    overflow: hidden;\n    width: 30%;\n    white-space: nowrap;\n    text-overflow: ellipsis\n}\n\n.deleteBtn {\n    width: 10%;\n}\n\n.itemPriority {\n    width: 10%;\n}\n\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n\n.priority-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.altAdd-container {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    margin-top: 50px;\n    margin-left: 30%;\n    width: 25%;\n    justify-content: center;\n}\n\n.altAdd-container:hover {\n    cursor: pointer;\n    color: #db4c3f;\n    transform: scale(1.1);\n}\n\n.altAdd-container:hover>.alt-plusSign {\n    background-color: #db4c3f;\n    color: white;\n}\n\n.alt-plusSign {\n    height: 19px;\n    width: 19px;\n    text-align: center;\n    color: #db4c3f;\n    border-radius: 50%;\n}\n\n/* .alt-plusSign:hover{\n    background-color: #db4c3f;\n    color: white;\n} */\n.altAddBtn-text {\n    color: rgb(150, 145, 145);\n}\n\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    transition: transform 150ms ease-in-out;\n}\n\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display: flex;\n}\n\n#itemDescBox {\n    text-overflow: ellipsis\n}\n\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n}\n\n.overlay.active {\n    display: block;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n.btn {\n    cursor: pointer;\n}\nimg {\n    height: 20px;\n    width: 20px;\n}\n.nav.btn {\n    color: white;\n    height: 1.9em;\n    width: 1.9em;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: 3px;\n}\n.nav.btn:hover {\n    background-color: rgb(231, 228, 228);\n    /* opacity: 0.5; */\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-left: 1.6em;\n    gap: 1.6em;\n}\n.right-nav {\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 1.6em;\n    margin-right: 1.6em;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    display: flex;\n    flex-direction: column;\n    background-color: #f7f7f7;\n    width: 28%;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    font-size: 18px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    margin-top: 2.4em;\n}\n#project-title {\n    font-weight: 600;\n}\n#project-addBtn {\n    font-size: 1.8em;\n    margin-top: 20px;\n    padding-bottom: 5px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 25px;\n    width: 30px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n#project-addBtn:hover {\n    background-color: rgb(231, 228, 228);\n}\n.addProject-form {\n    width: 55%;\n    align-self: center;\n    /* margin-left: 30px; */\n    margin-right: 20px;\n    display: none;\n    border: solid lightgray 1px;\n}\n.addProject-form:focus {\n    outline: none;\n    /* border: solid lightgray 2px; */\n}\n.addProject-form.active {\n    display: flex;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 20px;\n    padding-top: 0px;\n}\n.project {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n.project:hover {\n    background-color: rgb(231, 228, 228);\n\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n}\n.taskNum {\n    color: rgb(186, 176, 176);\n    padding-right: 15px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n#todo-hero {\n    padding: 55px;\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n\n}\n#todo-container {\n    /* padding: 55px; */\n    width: 90%;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin-top: 40px;\n\n}\n.itemCard > * {\n    /* width: 80%; */\n    /* height: 30px; */\n    /* text-align: center; */\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.completeBtn {\n    height: 17px;\n    width: 17px;\n    border: solid rgb(108, 103, 103) 2px;\n    border-radius: 50%;\n    cursor: pointer;\n    text-align: center;\n}\n.completeBtn:hover {\n    /* background-color: #db4c3f; */\n    transform: scale(1.1);\n}\n.checkMark {\n    color: white;\n}\n.checkMark:hover {\n    color: #db4c3f;\n}\n.task-header {\n    font-weight: 600;\n    font-size: 22px;\n}\n.itemDesc {\n    color: rgb(108, 103, 103);\n    display: block;\n    overflow: hidden;\n    width: 30%;\n    white-space: nowrap;\n    text-overflow: ellipsis\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n    width: 10%;\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n.altAdd-container {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    margin-top: 50px;\n    margin-left: 30%;\n    width: 25%;\n    justify-content: center;\n}\n.altAdd-container:hover {\n    cursor: pointer;\n    color: #db4c3f;\n    transform: scale(1.1);\n}\n.altAdd-container:hover > .alt-plusSign{\n    background-color: #db4c3f;\n    color: white;\n}\n.alt-plusSign {\n    height: 19px;\n    width: 19px;\n    text-align: center;\n    color: #db4c3f;\n    border-radius: 50%;\n}\n/* .alt-plusSign:hover{\n    background-color: #db4c3f;\n    color: white;\n} */\n.altAddBtn-text {\n    color: rgb(150, 145, 145);\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDescBox {\n    text-overflow: ellipsis\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }\n\n  @media screen and (max-width: 600px) {\n    .nav-bar {\n        justify-content: flex-end;\n    }\n    .left-nav {\n        flex-direction: row-reverse;\n    }\n    .right-nav {\n        display: none;\n    }\n    #hero {flex-direction: column;\n        justify-content: center;\n        align-items: center;\n    }\n    .left-sidebar {\n        /* width: auto; */\n        justify-content: flex-start;\n        height: 100%;\n        border-radius: 5%;\n        background-color: white;\n    }\n    .project-header {\n        margin-top: 0;\n    }\n    #todo-hero {\n        padding: 0px;\n    }\n  }", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;AACA;IACI,WAAW;AACf;AACA;IACI,eAAe;AACnB;AACA;IACI,YAAY;IACZ,WAAW;AACf;AACA;IACI,YAAY;IACZ,aAAa;IACb,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,kBAAkB;AACtB;AACA;IACI,oCAAoC;IACpC,kBAAkB;AACtB;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;AACjB;AACA;IACI,yBAAyB;IACzB,YAAY;IACZ,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;AACA;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,kBAAkB;IAClB,UAAU;AACd;AACA;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,UAAU;IACV,mBAAmB;AACvB;AACA;IACI,YAAY;IACZ,WAAW;IACX,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,kBAAkB;AACtB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,yBAAyB;IACzB,UAAU;IACV,aAAa;AACjB;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;AAC3B;AACA;IACI,eAAe;IACf,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,iBAAiB;AACrB;AACA;IACI,gBAAgB;AACpB;AACA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,mBAAmB;IACnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,YAAY;IACZ,WAAW;IACX,eAAe;IACf,mBAAmB;AACvB;AACA;IACI,oCAAoC;AACxC;AACA;IACI,UAAU;IACV,kBAAkB;IAClB,uBAAuB;IACvB,kBAAkB;IAClB,aAAa;IACb,2BAA2B;AAC/B;AACA;IACI,aAAa;IACb,iCAAiC;AACrC;AACA;IACI,aAAa;AACjB;AACA;IACI,6BAA6B;IAC7B,aAAa;IACb,gBAAgB;AACpB;AACA;IACI,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,mBAAmB;AACvB;AACA;IACI,oCAAoC;;AAExC;AACA;IACI,oCAAoC;AACxC;AACA;IACI,yBAAyB;IACzB,mBAAmB;AACvB;AACA;IACI,YAAY;AAChB;AACA;IACI,aAAa;IACb,UAAU;IACV,aAAa;IACb,sBAAsB;;AAE1B;AACA;IACI,mBAAmB;IACnB,UAAU;AACd;AACA;IACI,WAAW;IACX,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,8BAA8B;IAC9B,2CAA2C;IAC3C,gBAAgB;;AAEpB;AACA;IACI,gBAAgB;IAChB,kBAAkB;IAClB,wBAAwB;IACxB,2CAA2C;AAC/C;AACA;IACI,YAAY;IACZ,WAAW;IACX,oCAAoC;IACpC,kBAAkB;IAClB,eAAe;IACf,kBAAkB;AACtB;AACA;IACI,+BAA+B;IAC/B,qBAAqB;AACzB;AACA;IACI,YAAY;AAChB;AACA;IACI,cAAc;AAClB;AACA;IACI,gBAAgB;IAChB,eAAe;AACnB;AACA;IACI,yBAAyB;IACzB,cAAc;IACd,gBAAgB;IAChB,UAAU;IACV,mBAAmB;IACnB;AACJ;AACA;IACI,UAAU;AACd;AACA;IACI,UAAU;AACd;AACA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,mBAAmB;IACnB,QAAQ;IACR,gBAAgB;IAChB,gBAAgB;IAChB,UAAU;IACV,uBAAuB;AAC3B;AACA;IACI,eAAe;IACf,cAAc;IACd,qBAAqB;AACzB;AACA;IACI,yBAAyB;IACzB,YAAY;AAChB;AACA;IACI,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,cAAc;IACd,kBAAkB;AACtB;AACA;;;GAGG;AACH;IACI,yBAAyB;AAC7B;AACA;IACI,iBAAiB;IACjB,eAAe;IACf,SAAS;IACT,SAAS;IACT,iBAAiB;IACjB,UAAU;IACV,4BAA4B;IAC5B,yCAAyC;IACzC,uBAAuB;IACvB,uBAAuB;IACvB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,aAAa;AACjB;AACA;IACI,wCAAwC;IACxC,YAAY;AAChB;AACA;IACI;AACJ;AACA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,WAAW;IACX,YAAY;IACZ,oCAAoC;IACpC,UAAU;EACZ;EACA;MACI,cAAc;EAClB;;EAEA;IACE;QACI,yBAAyB;IAC7B;IACA;QACI,2BAA2B;IAC/B;IACA;QACI,aAAa;IACjB;IACA,OAAO,sBAAsB;QACzB,uBAAuB;QACvB,mBAAmB;IACvB;IACA;QACI,iBAAiB;QACjB,2BAA2B;QAC3B,YAAY;QACZ,iBAAiB;QACjB,uBAAuB;IAC3B;IACA;QACI,aAAa;IACjB;IACA;QACI,YAAY;IAChB;EACF","sourcesContent":["body {\n    margin: 0;\n}\np {\n    margin: 0px;\n}\n.btn {\n    cursor: pointer;\n}\nimg {\n    height: 20px;\n    width: 20px;\n}\n.nav.btn {\n    color: white;\n    height: 1.9em;\n    width: 1.9em;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: 3px;\n}\n.nav.btn:hover {\n    background-color: rgb(231, 228, 228);\n    /* opacity: 0.5; */\n}\n#page-container {\n    height: 100%;\n    width: 100%;\n    display: flex;\n}\n.nav-bar {\n    background-color: #db4c3f;\n    height: 45px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.left-nav {\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-left: 1.6em;\n    gap: 1.6em;\n}\n.right-nav {\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 1.6em;\n    margin-right: 1.6em;\n}\n#hero {\n    height: 80vh;\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /* border: solid black 1px; */\n    align-self: center;\n}\n.left-sidebar {\n    display: flex;\n    flex-direction: column;\n    background-color: #f7f7f7;\n    width: 28%;\n    height: 100vh;\n}\n.project-bar {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.project-header {\n    font-size: 18px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    margin-top: 2.4em;\n}\n#project-title {\n    font-weight: 600;\n}\n#project-addBtn {\n    font-size: 1.8em;\n    margin-top: 20px;\n    padding-bottom: 5px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 25px;\n    width: 30px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n#project-addBtn:hover {\n    background-color: rgb(231, 228, 228);\n}\n.addProject-form {\n    width: 55%;\n    align-self: center;\n    /* margin-left: 30px; */\n    margin-right: 20px;\n    display: none;\n    border: solid lightgray 1px;\n}\n.addProject-form:focus {\n    outline: none;\n    /* border: solid lightgray 2px; */\n}\n.addProject-form.active {\n    display: flex;\n}\n.project-list {\n    /* border: solid black 1px; */\n    padding: 20px;\n    padding-top: 0px;\n}\n.project {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: 30px;\n    margin: 10px;\n    padding-left: 20px;\n    cursor: pointer;\n    border-radius: 10px;\n}\n.project:hover {\n    background-color: rgb(231, 228, 228);\n\n}\n.project.active {\n    background-color: rgb(231, 228, 228);\n}\n.taskNum {\n    color: rgb(186, 176, 176);\n    padding-right: 15px;\n}\n.fa-thin.fa-plus {\n    margin: 20px;\n}\n#todo-hero {\n    padding: 55px;\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n\n}\n#todo-container {\n    /* padding: 55px; */\n    width: 90%;\n}\n.itemCard {\n    width: 100%;\n    height: 30px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: solid rgb(227, 222, 222) 1px;\n    margin-top: 40px;\n\n}\n.itemCard > * {\n    /* width: 80%; */\n    /* height: 30px; */\n    /* text-align: center; */\n    /* border-bottom: solid rgb(0, 0, 0) 1px; */\n}\n.completeBtn {\n    height: 17px;\n    width: 17px;\n    border: solid rgb(108, 103, 103) 2px;\n    border-radius: 50%;\n    cursor: pointer;\n    text-align: center;\n}\n.completeBtn:hover {\n    /* background-color: #db4c3f; */\n    transform: scale(1.1);\n}\n.checkMark {\n    color: white;\n}\n.checkMark:hover {\n    color: #db4c3f;\n}\n.task-header {\n    font-weight: 600;\n    font-size: 22px;\n}\n.itemDesc {\n    color: rgb(108, 103, 103);\n    display: block;\n    overflow: hidden;\n    width: 30%;\n    white-space: nowrap;\n    text-overflow: ellipsis\n}\n.deleteBtn {\n    width: 10%;\n}\n.itemPriority {\n    width: 10%;\n}\n.dueDate-Container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.priority-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n.altAdd-container {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    margin-top: 50px;\n    margin-left: 30%;\n    width: 25%;\n    justify-content: center;\n}\n.altAdd-container:hover {\n    cursor: pointer;\n    color: #db4c3f;\n    transform: scale(1.1);\n}\n.altAdd-container:hover > .alt-plusSign{\n    background-color: #db4c3f;\n    color: white;\n}\n.alt-plusSign {\n    height: 19px;\n    width: 19px;\n    text-align: center;\n    color: #db4c3f;\n    border-radius: 50%;\n}\n/* .alt-plusSign:hover{\n    background-color: #db4c3f;\n    color: white;\n} */\n.altAddBtn-text {\n    color: rgb(150, 145, 145);\n}\n.submitCard {\n    border-radius: 5%;\n    position: fixed;\n    top: 105%;\n    left: 35%;\n    font-size: larger;\n    z-index: 2;\n    padding: 20px 50px 50px 50px;\n    transform: translate(-50%, -50%) scale(0);\n    background-color: white;\n    border: solid black 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 30px;\n    align-self: center;\n    display: none;\n}\n.submitCard.active {\n    transform: translate(0%, -130%) scale(1);\n    display:flex;\n}\n#itemDescBox {\n    text-overflow: ellipsis\n}\n.overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: none;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.7);\n    opacity: 1;\n  }\n  .overlay.active {\n      display: block;\n  }\n\n  @media screen and (max-width: 600px) {\n    .nav-bar {\n        justify-content: flex-end;\n    }\n    .left-nav {\n        flex-direction: row-reverse;\n    }\n    .right-nav {\n        display: none;\n    }\n    #hero {flex-direction: column;\n        justify-content: center;\n        align-items: center;\n    }\n    .left-sidebar {\n        /* width: auto; */\n        justify-content: flex-start;\n        height: 100%;\n        border-radius: 5%;\n        background-color: white;\n    }\n    .project-header {\n        margin-top: 0;\n    }\n    #todo-hero {\n        padding: 0px;\n    }\n  }"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -630,6 +630,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _remove_all_child_DOM__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./remove_all_child_DOM */ "./src/remove_all_child_DOM.js");
+/* eslint-disable func-names */
+/* eslint-disable no-plusplus */
 
 
 
@@ -653,11 +655,19 @@ const altAddContainer = document.querySelector('.altAdd-container');
 
 let activeProject = [];
 const projectList = [];
-// let projectListStored = JSON.parse(window.localStorage.getItem('projectList'));
-const taskList = [];
 const completedTasks = [];
 
-// Object constructor
+function printOptions() {
+  for (let i = 0; i < projectList.length; i++) {
+    const option = document.createElement('option');
+    option.value = projectList[i].name;
+    option.innerHTML = projectList[i].name;
+    projectSelector.appendChild(option);
+    newTitle.focus();
+    projectSelector.value = activeProject.name;
+  }
+}
+
 function ListItem(title, description, dueDate, priority, projectID) {
   this.title = title;
   this.description = description;
@@ -665,7 +675,7 @@ function ListItem(title, description, dueDate, priority, projectID) {
   this.priority = priority;
   this.projectID = projectID;
 
-  function createTaskListDOM() {
+  function createDOM() {
     const itemCard = document.createElement('div');
     itemCard.classList.add('itemCard');
 
@@ -707,16 +717,17 @@ function ListItem(title, description, dueDate, priority, projectID) {
       descriptionDOM,
       dueDateDOM,
       priorityDOM,
+      projectID,
     );
 
-    // Determines which project to add new task to
+    // todoContainer.appendChild(itemCard);
+    // activeProject.taskList.push(itemCard)
+
     const projectSelected = projectSelector.value;
     if (projectSelected === activeProject.name) {
       todoContainer.appendChild(itemCard);
       activeProject.updateCounter();
     }
-
-    // adds task and updates counter for the right project
     projectList.forEach((project) => {
       if (projectSelected === project.name) {
         project.taskList.push(itemCard);
@@ -724,14 +735,43 @@ function ListItem(title, description, dueDate, priority, projectID) {
       }
     });
   }
-  return { createTaskListDOM };
+  return { createDOM };
 }
 function Project(name) {
   this.name = name;
+  const taskList = [];
   const taskNumDOM = document.createElement('div');
   taskNumDOM.classList.add('taskNum');
 
-  const createProjectListDOM = function (project) {
+  const removeTasksDOM = function () {
+    while (todoContainer.firstChild) {
+      todoContainer.removeChild(todoContainer.firstChild);
+    }
+  };
+  const printTask = function () {
+    removeTasksDOM();
+
+    taskHeader.textContent = name;
+    todoHero.prepend(taskHeader);
+
+    // printing task list from active project
+    for (let i = 0; i < taskList.length; i++) {
+      todoContainer.appendChild(taskList[i]);
+    }
+  };
+
+  const makeActive = function (projectDOM, project) {
+    const projects = projectListDOM.children;
+    // remove active status from other projects
+    for (let i = 0; i < projects.length; i++) {
+      projects[i].classList.remove('active');
+    }
+    activeProject = project;
+    projectDOM.classList.add('active');
+    printTask();
+  };
+
+  const createDom = function (project) {
     const projectDOM = document.createElement('div');
     projectDOM.textContent = name;
     projectDOM.classList.add('project');
@@ -740,56 +780,19 @@ function Project(name) {
     projectDOM.appendChild(taskNumDOM);
 
     projectListDOM.prepend(projectDOM);
-    // eslint-disable-next-line no-use-before-define
     makeActive(projectDOM, project);
     projectDOM.addEventListener('click', () => {
-      // eslint-disable-next-line no-use-before-define
       makeActive(projectDOM, project);
     });
   };
 
-  let makeActive = function (projectDOM, project) {
-    const projects = projectListDOM.children;
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < projects.length; i++) {
-      projects[i].classList.remove('active');
-    }
-    activeProject = project;
-    projectDOM.classList.add('active');
-    // eslint-disable-next-line no-use-before-define
-    printTask();
-  };
-
-  let printTask = function () {
-    taskHeader.textContent = name;
-
-    // removes taskList from in-active projects
-    while (todoContainer.firstChild) {
-      todoContainer.removeChild(todoContainer.firstChild);
-    }
-
-    todoHero.prepend(taskHeader);
-    // printing task list from active project
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < taskList.length; i++) {
-      todoContainer.appendChild(taskList[i]);
-    }
-
-    altAddContainer.addEventListener('click', () => {
-      submitCard.classList.add('active');
-      overlay.classList.add('active');
-      (0,_remove_all_child_DOM__WEBPACK_IMPORTED_MODULE_1__.removeAllChildrenDOM)(projectSelector);
-      // eslint-disable-next-line no-use-before-define
-      printOptions();
-    });
-  };
-
   const updateCounter = function () {
+    // taskNumDOM.textContent = activeProject.length;
     taskNumDOM.textContent = taskList.length;
   };
 
   return {
-    createProjectListDOM,
+    createDom,
     makeActive,
     printTask,
     updateCounter,
@@ -798,21 +801,11 @@ function Project(name) {
   };
 }
 
-function printOptions() {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < projectList.length; i++) {
-    const option = document.createElement('option');
-    option.value = projectList[i].name;
-    option.innerHTML = projectList[i].name;
-    projectSelector.appendChild(option);
-    newTitle.focus();
-    projectSelector.value = activeProject.name;
-  }
-}
 function clearForm() {
   newTitle.value = '';
   newDes.value = '';
 }
+
 submitBtn.addEventListener('click', () => {
   const newItem = new ListItem(
     newTitle.value,
@@ -820,71 +813,59 @@ submitBtn.addEventListener('click', () => {
     newDueDate.value,
     newPriority.value,
   );
-  newItem.createTaskListDOM(newItem);
+  newItem.createDOM(newItem);
   submitCard.classList.remove('active');
   overlay.classList.remove('active');
-  //   window.localStorage.setItem('projectList', JSON.stringify(projectList));
-  // window.localStorage.setItem("taskList", activeProject.taskList.outerHTML);
   clearForm();
 });
+
 addBtn.addEventListener('click', () => {
   submitCard.classList.add('active');
   overlay.classList.add('active');
   (0,_remove_all_child_DOM__WEBPACK_IMPORTED_MODULE_1__.removeAllChildrenDOM)(projectSelector);
   printOptions();
 });
+
 projectAddBtn.addEventListener('click', () => {
   projectAddForm.classList.add('active');
   projectAddForm.focus();
 });
+
 projectAddForm.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     const name = projectAddForm.value;
-    const newProject = new Project(name);
+    const newProject = new Project(name, true);
     projectList.push(newProject);
-    window.localStorage.setItem('projectList', JSON.stringify(projectList));
-    newProject.createProjectListDOM(newProject);
+    newProject.createDom(newProject);
     activeProject = newProject;
     projectAddForm.classList.remove('active');
     projectAddForm.value = '';
     newProject.printTask();
   }
 });
+
+altAddContainer.addEventListener('click', () => {
+  submitCard.classList.add('active');
+  overlay.classList.add('active');
+  (0,_remove_all_child_DOM__WEBPACK_IMPORTED_MODULE_1__.removeAllChildrenDOM)(projectSelector);
+  printOptions();
+});
+
 overlay.onclick = function closeOverlay() {
   submitCard.classList.remove('active');
   overlay.classList.remove('active');
   clearForm();
 };
 
-if (!window.localStorage.getItem('projectList')) {
-  const defaultProject = new Project('Default');
-  projectList.push(defaultProject);
-  activeProject = defaultProject;
-  //   window.localStorage.setItem('projectList', JSON.stringify(projectList));
-  //   projectListStored = JSON.parse(window.localStorage.getItem('projectList'));
-  defaultProject.createProjectListDOM(defaultProject);
-} else {
-//   projectListStored.forEach((projectStored) => {
-//     const project = new Project(projectStored.name);
-//     projectList.push(project);
+const defaultProject = new Project('Default');
+projectList.push(defaultProject);
+activeProject = defaultProject;
+defaultProject.createDom(defaultProject);
 
-  // console.log(project.taskList)
-  //   });
-  //   projectListStored.forEach((projectStored) => {
-  //     const index = projectListStored.indexOf(projectStored);
-  //     const currentProject = projectList[index];
-  //     currentProject.createProjectListDOM(currentProject);
-  // let tasks = JSON.parse(window.localStorage.getItem('taskList'));
-  // currentProject.taskList.push(tasks[index])
-
-  // currentProject.createTaskListDOM()
-//   });
-}
-
-// window.localStorage.clear();
-
-// console.log(activeProject.taskList)
-// console.log(JSON.parse(window.localStorage.getItem('projectList')))
+// Features to add
+//     Menus that roll out when clicking projects. using animations
+//     Make Site Responsive
+//     Drop-Down Menus
 
 })();
 

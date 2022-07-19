@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+/* eslint-disable no-plusplus */
 import './style.css';
 import { removeAllChildrenDOM } from './remove_all_child_DOM';
 
@@ -21,11 +23,19 @@ const altAddContainer = document.querySelector('.altAdd-container');
 
 let activeProject = [];
 const projectList = [];
-// let projectListStored = JSON.parse(window.localStorage.getItem('projectList'));
-const taskList = [];
 const completedTasks = [];
 
-// Object constructor
+function printOptions() {
+  for (let i = 0; i < projectList.length; i++) {
+    const option = document.createElement('option');
+    option.value = projectList[i].name;
+    option.innerHTML = projectList[i].name;
+    projectSelector.appendChild(option);
+    newTitle.focus();
+    projectSelector.value = activeProject.name;
+  }
+}
+
 function ListItem(title, description, dueDate, priority, projectID) {
   this.title = title;
   this.description = description;
@@ -33,7 +43,7 @@ function ListItem(title, description, dueDate, priority, projectID) {
   this.priority = priority;
   this.projectID = projectID;
 
-  function createTaskListDOM() {
+  function createDOM() {
     const itemCard = document.createElement('div');
     itemCard.classList.add('itemCard');
 
@@ -75,16 +85,17 @@ function ListItem(title, description, dueDate, priority, projectID) {
       descriptionDOM,
       dueDateDOM,
       priorityDOM,
+      projectID,
     );
 
-    // Determines which project to add new task to
+    // todoContainer.appendChild(itemCard);
+    // activeProject.taskList.push(itemCard)
+
     const projectSelected = projectSelector.value;
     if (projectSelected === activeProject.name) {
       todoContainer.appendChild(itemCard);
       activeProject.updateCounter();
     }
-
-    // adds task and updates counter for the right project
     projectList.forEach((project) => {
       if (projectSelected === project.name) {
         project.taskList.push(itemCard);
@@ -92,14 +103,43 @@ function ListItem(title, description, dueDate, priority, projectID) {
       }
     });
   }
-  return { createTaskListDOM };
+  return { createDOM };
 }
 function Project(name) {
   this.name = name;
+  const taskList = [];
   const taskNumDOM = document.createElement('div');
   taskNumDOM.classList.add('taskNum');
 
-  const createProjectListDOM = function (project) {
+  const removeTasksDOM = function () {
+    while (todoContainer.firstChild) {
+      todoContainer.removeChild(todoContainer.firstChild);
+    }
+  };
+  const printTask = function () {
+    removeTasksDOM();
+
+    taskHeader.textContent = name;
+    todoHero.prepend(taskHeader);
+
+    // printing task list from active project
+    for (let i = 0; i < taskList.length; i++) {
+      todoContainer.appendChild(taskList[i]);
+    }
+  };
+
+  const makeActive = function (projectDOM, project) {
+    const projects = projectListDOM.children;
+    // remove active status from other projects
+    for (let i = 0; i < projects.length; i++) {
+      projects[i].classList.remove('active');
+    }
+    activeProject = project;
+    projectDOM.classList.add('active');
+    printTask();
+  };
+
+  const createDom = function (project) {
     const projectDOM = document.createElement('div');
     projectDOM.textContent = name;
     projectDOM.classList.add('project');
@@ -108,56 +148,19 @@ function Project(name) {
     projectDOM.appendChild(taskNumDOM);
 
     projectListDOM.prepend(projectDOM);
-    // eslint-disable-next-line no-use-before-define
     makeActive(projectDOM, project);
     projectDOM.addEventListener('click', () => {
-      // eslint-disable-next-line no-use-before-define
       makeActive(projectDOM, project);
     });
   };
 
-  let makeActive = function (projectDOM, project) {
-    const projects = projectListDOM.children;
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < projects.length; i++) {
-      projects[i].classList.remove('active');
-    }
-    activeProject = project;
-    projectDOM.classList.add('active');
-    // eslint-disable-next-line no-use-before-define
-    printTask();
-  };
-
-  let printTask = function () {
-    taskHeader.textContent = name;
-
-    // removes taskList from in-active projects
-    while (todoContainer.firstChild) {
-      todoContainer.removeChild(todoContainer.firstChild);
-    }
-
-    todoHero.prepend(taskHeader);
-    // printing task list from active project
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < taskList.length; i++) {
-      todoContainer.appendChild(taskList[i]);
-    }
-
-    altAddContainer.addEventListener('click', () => {
-      submitCard.classList.add('active');
-      overlay.classList.add('active');
-      removeAllChildrenDOM(projectSelector);
-      // eslint-disable-next-line no-use-before-define
-      printOptions();
-    });
-  };
-
   const updateCounter = function () {
+    // taskNumDOM.textContent = activeProject.length;
     taskNumDOM.textContent = taskList.length;
   };
 
   return {
-    createProjectListDOM,
+    createDom,
     makeActive,
     printTask,
     updateCounter,
@@ -166,21 +169,11 @@ function Project(name) {
   };
 }
 
-function printOptions() {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < projectList.length; i++) {
-    const option = document.createElement('option');
-    option.value = projectList[i].name;
-    option.innerHTML = projectList[i].name;
-    projectSelector.appendChild(option);
-    newTitle.focus();
-    projectSelector.value = activeProject.name;
-  }
-}
 function clearForm() {
   newTitle.value = '';
   newDes.value = '';
 }
+
 submitBtn.addEventListener('click', () => {
   const newItem = new ListItem(
     newTitle.value,
@@ -188,68 +181,56 @@ submitBtn.addEventListener('click', () => {
     newDueDate.value,
     newPriority.value,
   );
-  newItem.createTaskListDOM(newItem);
+  newItem.createDOM(newItem);
   submitCard.classList.remove('active');
   overlay.classList.remove('active');
-  //   window.localStorage.setItem('projectList', JSON.stringify(projectList));
-  // window.localStorage.setItem("taskList", activeProject.taskList.outerHTML);
   clearForm();
 });
+
 addBtn.addEventListener('click', () => {
   submitCard.classList.add('active');
   overlay.classList.add('active');
   removeAllChildrenDOM(projectSelector);
   printOptions();
 });
+
 projectAddBtn.addEventListener('click', () => {
   projectAddForm.classList.add('active');
   projectAddForm.focus();
 });
+
 projectAddForm.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     const name = projectAddForm.value;
-    const newProject = new Project(name);
+    const newProject = new Project(name, true);
     projectList.push(newProject);
-    window.localStorage.setItem('projectList', JSON.stringify(projectList));
-    newProject.createProjectListDOM(newProject);
+    newProject.createDom(newProject);
     activeProject = newProject;
     projectAddForm.classList.remove('active');
     projectAddForm.value = '';
     newProject.printTask();
   }
 });
+
+altAddContainer.addEventListener('click', () => {
+  submitCard.classList.add('active');
+  overlay.classList.add('active');
+  removeAllChildrenDOM(projectSelector);
+  printOptions();
+});
+
 overlay.onclick = function closeOverlay() {
   submitCard.classList.remove('active');
   overlay.classList.remove('active');
   clearForm();
 };
 
-if (!window.localStorage.getItem('projectList')) {
-  const defaultProject = new Project('Default');
-  projectList.push(defaultProject);
-  activeProject = defaultProject;
-  //   window.localStorage.setItem('projectList', JSON.stringify(projectList));
-  //   projectListStored = JSON.parse(window.localStorage.getItem('projectList'));
-  defaultProject.createProjectListDOM(defaultProject);
-} else {
-//   projectListStored.forEach((projectStored) => {
-//     const project = new Project(projectStored.name);
-//     projectList.push(project);
+const defaultProject = new Project('Default');
+projectList.push(defaultProject);
+activeProject = defaultProject;
+defaultProject.createDom(defaultProject);
 
-  // console.log(project.taskList)
-  //   });
-  //   projectListStored.forEach((projectStored) => {
-  //     const index = projectListStored.indexOf(projectStored);
-  //     const currentProject = projectList[index];
-  //     currentProject.createProjectListDOM(currentProject);
-  // let tasks = JSON.parse(window.localStorage.getItem('taskList'));
-  // currentProject.taskList.push(tasks[index])
-
-  // currentProject.createTaskListDOM()
-//   });
-}
-
-// window.localStorage.clear();
-
-// console.log(activeProject.taskList)
-// console.log(JSON.parse(window.localStorage.getItem('projectList')))
+// Features to add
+//     Menus that roll out when clicking projects. using animations
+//     Make Site Responsive
+//     Drop-Down Menus

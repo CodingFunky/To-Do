@@ -1,41 +1,34 @@
 body {
     margin: 0;
 }
-
 p {
     margin: 0px;
 }
-
 .btn {
     cursor: pointer;
 }
-
 img {
     height: 20px;
     width: 20px;
 }
-
 .nav.btn {
     color: white;
-    height: 30px;
-    width: 30px;
+    height: 1.9em;
+    width: 1.9em;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
 }
-
 .nav.btn:hover {
     background-color: rgb(231, 228, 228);
     /* opacity: 0.5; */
 }
-
 #page-container {
     height: 100%;
     width: 100%;
     display: flex;
 }
-
 .nav-bar {
     background-color: #db4c3f;
     height: 45px;
@@ -43,25 +36,22 @@ img {
     justify-content: space-between;
     align-items: center;
 }
-
 .left-nav {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 25px;
-    gap: 25px;
+    margin-left: 1.6em;
+    gap: 1.6em;
 }
-
 .right-nav {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
-    margin-right: 25px;
+    gap: 1.6em;
+    margin-right: 1.6em;
 }
-
 #hero {
     height: 80vh;
     width: 100%;
@@ -70,37 +60,30 @@ img {
     /* border: solid black 1px; */
     align-self: center;
 }
-
 .left-sidebar {
     display: flex;
     flex-direction: column;
     background-color: #f7f7f7;
-    width: 275px;
+    width: 28%;
     height: 100vh;
 }
-
 .project-bar {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .project-header {
     font-size: 18px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 20px;
-    margin-top: 40px;
-    /* padding-right: 10px; */
+    margin-top: 2.4em;
 }
-
 #project-title {
     font-weight: 600;
 }
-
 #project-addBtn {
-    font-size: 30px;
+    font-size: 1.8em;
     margin-top: 20px;
     padding-bottom: 5px;
     display: flex;
@@ -111,11 +94,9 @@ img {
     cursor: pointer;
     border-radius: 10px;
 }
-
 #project-addBtn:hover {
     background-color: rgb(231, 228, 228);
 }
-
 .addProject-form {
     width: 55%;
     align-self: center;
@@ -124,22 +105,18 @@ img {
     display: none;
     border: solid lightgray 1px;
 }
-
 .addProject-form:focus {
     outline: none;
     /* border: solid lightgray 2px; */
 }
-
 .addProject-form.active {
     display: flex;
 }
-
 .project-list {
     /* border: solid black 1px; */
     padding: 20px;
     padding-top: 0px;
 }
-
 .project {
     display: flex;
     justify-content: space-between;
@@ -150,25 +127,20 @@ img {
     cursor: pointer;
     border-radius: 10px;
 }
-
 .project:hover {
     background-color: rgb(231, 228, 228);
 
 }
-
 .project.active {
     background-color: rgb(231, 228, 228);
 }
-
 .taskNum {
     color: rgb(186, 176, 176);
     padding-right: 15px;
 }
-
 .fa-thin.fa-plus {
     margin: 20px;
 }
-
 #todo-hero {
     padding: 55px;
     width: 70%;
@@ -176,12 +148,10 @@ img {
     flex-direction: column;
 
 }
-
 #todo-container {
     /* padding: 55px; */
     width: 90%;
 }
-
 .itemCard {
     width: 100%;
     height: 30px;
@@ -193,14 +163,12 @@ img {
     margin-top: 40px;
 
 }
-
-.itemCard>* {
+.itemCard > * {
     /* width: 80%; */
     /* height: 30px; */
     /* text-align: center; */
     /* border-bottom: solid rgb(0, 0, 0) 1px; */
 }
-
 .completeBtn {
     height: 17px;
     width: 17px;
@@ -209,25 +177,20 @@ img {
     cursor: pointer;
     text-align: center;
 }
-
 .completeBtn:hover {
     /* background-color: #db4c3f; */
     transform: scale(1.1);
 }
-
 .checkMark {
     color: white;
 }
-
 .checkMark:hover {
     color: #db4c3f;
 }
-
 .task-header {
     font-weight: 600;
     font-size: 22px;
 }
-
 .itemDesc {
     color: rgb(108, 103, 103);
     display: block;
@@ -236,27 +199,22 @@ img {
     white-space: nowrap;
     text-overflow: ellipsis
 }
-
 .deleteBtn {
     width: 10%;
 }
-
 .itemPriority {
     width: 10%;
 }
-
 .dueDate-Container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .priority-container {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-
 .altAdd-container {
     display: flex;
     flex-direction: row;
@@ -266,18 +224,15 @@ img {
     width: 25%;
     justify-content: center;
 }
-
 .altAdd-container:hover {
     cursor: pointer;
     color: #db4c3f;
     transform: scale(1.1);
 }
-
-.altAdd-container:hover>.alt-plusSign {
+.altAdd-container:hover > .alt-plusSign{
     background-color: #db4c3f;
     color: white;
 }
-
 .alt-plusSign {
     height: 19px;
     width: 19px;
@@ -285,7 +240,6 @@ img {
     color: #db4c3f;
     border-radius: 50%;
 }
-
 /* .alt-plusSign:hover{
     background-color: #db4c3f;
     color: white;
@@ -293,7 +247,6 @@ img {
 .altAddBtn-text {
     color: rgb(150, 145, 145);
 }
-
 .submitCard {
     border-radius: 5%;
     position: fixed;
@@ -309,18 +262,16 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    transition: transform 150ms ease-in-out;
+    align-self: center;
+    display: none;
 }
-
 .submitCard.active {
     transform: translate(0%, -130%) scale(1);
-    display: flex;
+    display:flex;
 }
-
 #itemDescBox {
     text-overflow: ellipsis
 }
-
 .overlay {
     position: fixed;
     top: 0;
@@ -330,8 +281,36 @@ img {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 1;
-}
+  }
+  .overlay.active {
+      display: block;
+  }
 
-.overlay.active {
-    display: block;
-}
+  @media screen and (max-width: 600px) {
+    .nav-bar {
+        justify-content: flex-end;
+    }
+    .left-nav {
+        flex-direction: row-reverse;
+    }
+    .right-nav {
+        display: none;
+    }
+    #hero {flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .left-sidebar {
+        /* width: auto; */
+        justify-content: flex-start;
+        height: 100%;
+        border-radius: 5%;
+        background-color: white;
+    }
+    .project-header {
+        margin-top: 0;
+    }
+    #todo-hero {
+        padding: 0px;
+    }
+  }
