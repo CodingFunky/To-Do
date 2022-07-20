@@ -654,7 +654,7 @@ const taskHeader = document.querySelector('.task-header');
 const altAddContainer = document.querySelector('.altAdd-container');
 
 let activeProject = [];
-const projectList = [];
+let projectList = [];
 const completedTasks = [];
 
 function printOptions() {
@@ -717,7 +717,6 @@ function ListItem(title, description, dueDate, priority, projectID) {
       descriptionDOM,
       dueDateDOM,
       priorityDOM,
-      projectID,
     );
 
     // todoContainer.appendChild(itemCard);
@@ -857,10 +856,37 @@ overlay.onclick = function closeOverlay() {
   clearForm();
 };
 
-const defaultProject = new Project('Default');
-projectList.push(defaultProject);
-activeProject = defaultProject;
-defaultProject.createDom(defaultProject);
+if (!localStorage.getItem('projectList')) {
+  const defaultProject = new Project('Default');
+  projectList.push(defaultProject);
+  activeProject = defaultProject;
+  defaultProject.createDom(defaultProject);
+  localStorage.setItem('projectList', JSON.stringify(projectList));
+  console.log('default project');
+  console.log(defaultProject);
+  console.log('localStorage.getItem(projectList)');
+  console.log(JSON.parse(localStorage.getItem('projectList')));
+} else {
+  const projectListStored = JSON.parse(localStorage.getItem('projectList'));
+
+  projectListStored.forEach((project) => {
+    const restoredProject = new Project(project.name);
+    console.log('restoredProject');
+    console.log(restoredProject);
+    // restoredProject.createDOM(restoredProject);
+    projectList.push(restoredProject);
+  });
+  console.log('projectList');
+  console.log(projectList);
+  console.log('projectList[0]');
+  console.log(projectList[0]);
+  projectList[0].createDOM(projectList[0]);
+}
+
+// const defaultProject = new Project('Default');
+// projectList.push(defaultProject);
+// activeProject = defaultProject;
+// defaultProject.createDom(defaultProject);
 
 // Features to add
 //     Menus that roll out when clicking projects. using animations
