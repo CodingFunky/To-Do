@@ -225,6 +225,7 @@ overlay.onclick = function closeOverlay() {
   clearForm();
 };
 
+
 const defaultProject = new Project('Default');
 projectList.push(defaultProject);
 activeProject = defaultProject;
