@@ -138,7 +138,7 @@ function Project(name) {
     printTask();
   };
 
-  const createDom = function (project) {
+  const createDOM = function (project) {
     const projectDOM = document.createElement('div');
     projectDOM.textContent = name;
     projectDOM.classList.add('project');
@@ -159,9 +159,9 @@ function Project(name) {
   };
 
   return {
-    createDom,
     makeActive,
     printTask,
+    createDOM,
     updateCounter,
     taskList,
     name,
@@ -203,7 +203,7 @@ projectAddForm.addEventListener('keypress', (e) => {
     const name = projectAddForm.value;
     const newProject = new Project(name, true);
     projectList.push(newProject);
-    newProject.createDom(newProject);
+    newProject.createDOM(newProject);
     activeProject = newProject;
     projectAddForm.classList.remove('active');
     projectAddForm.value = '';
@@ -228,7 +228,7 @@ if (!localStorage.getItem('projectList')) {
   const defaultProject = new Project('Default');
   projectList.push(defaultProject);
   activeProject = defaultProject;
-  defaultProject.createDom(defaultProject);
+  defaultProject.createDOM(defaultProject);
   localStorage.setItem('projectList', JSON.stringify(projectList));
   console.log('default project');
   console.log(defaultProject);
@@ -241,20 +241,19 @@ if (!localStorage.getItem('projectList')) {
     const restoredProject = new Project(project.name);
     console.log('restoredProject');
     console.log(restoredProject);
-    // restoredProject.createDOM(restoredProject);
     projectList.push(restoredProject);
   });
   console.log('projectList');
   console.log(projectList);
   console.log('projectList[0]');
   console.log(projectList[0]);
-  projectList[0].createDOM(projectList[0]);
+  projectList[0].createDOM();
 }
 
 // const defaultProject = new Project('Default');
 // projectList.push(defaultProject);
 // activeProject = defaultProject;
-// defaultProject.createDom(defaultProject);
+// defaultProject.createDOM(defaultProject);
 
 // Features to add
 //     Menus that roll out when clicking projects. using animations
