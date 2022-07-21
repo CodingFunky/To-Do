@@ -630,6 +630,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _remove_all_child_DOM__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./remove_all_child_DOM */ "./src/remove_all_child_DOM.js");
+/* eslint-disable prefer-destructuring */
 /* eslint-disable func-names */
 /* eslint-disable no-plusplus */
 
@@ -781,7 +782,7 @@ function Project(name) {
     projectListDOM.prepend(projectDOM);
     makeActive(projectDOM, project);
     projectDOM.addEventListener('click', () => {
-      makeActive(projectDOM, project);
+      makeActive(projectDOM, this);
     });
   };
 
@@ -862,24 +863,15 @@ if (!localStorage.getItem('projectList')) {
   activeProject = defaultProject;
   defaultProject.createDOM(defaultProject);
   localStorage.setItem('projectList', JSON.stringify(projectList));
-  console.log('default project');
-  console.log(defaultProject);
-  console.log('localStorage.getItem(projectList)');
-  console.log(JSON.parse(localStorage.getItem('projectList')));
 } else {
   const projectListStored = JSON.parse(localStorage.getItem('projectList'));
-
   projectListStored.forEach((project) => {
     const restoredProject = new Project(project.name);
-    console.log('restoredProject');
-    console.log(restoredProject);
+    activeProject = restoredProject;
     projectList.push(restoredProject);
+    restoredProject.createDOM();
   });
-  console.log('projectList');
-  console.log(projectList);
-  console.log('projectList[0]');
-  console.log(projectList[0]);
-  projectList[0].createDOM();
+  activeProject = projectList[0];
 }
 
 // const defaultProject = new Project('Default');
@@ -891,6 +883,8 @@ if (!localStorage.getItem('projectList')) {
 //     Menus that roll out when clicking projects. using animations
 //     Make Site Responsive
 //     Drop-Down Menus
+
+// localStorage.clear(); 
 
 })();
 
