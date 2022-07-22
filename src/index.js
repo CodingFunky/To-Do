@@ -23,7 +23,7 @@ const taskHeader = document.querySelector('.task-header');
 const altAddContainer = document.querySelector('.altAdd-container');
 
 let activeProject = [];
-let projectList = [];
+const projectList = [];
 const completedTasks = [];
 
 function printOptions() {
@@ -206,6 +206,7 @@ projectAddForm.addEventListener('keypress', (e) => {
     projectList.push(newProject);
     newProject.createDOM(newProject);
     activeProject = newProject;
+    localStorage.setItem('projectList', JSON.stringify(projectList));
     projectAddForm.classList.remove('active');
     projectAddForm.value = '';
     newProject.printTask();
@@ -252,4 +253,4 @@ if (!localStorage.getItem('projectList')) {
 //     Make Site Responsive
 //     Drop-Down Menus
 
-// localStorage.clear(); 
+// localStorage.clear();
