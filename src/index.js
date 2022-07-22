@@ -207,6 +207,7 @@ projectAddForm.addEventListener('keypress', (e) => {
     newProject.createDOM(newProject);
     activeProject = newProject;
     localStorage.setItem('projectList', JSON.stringify(projectList));
+    localStorage.setItem('activeProject', JSON.stringify(activeProject));
     projectAddForm.classList.remove('active');
     projectAddForm.value = '';
     newProject.printTask();
@@ -241,6 +242,7 @@ if (!localStorage.getItem('projectList')) {
     restoredProject.createDOM();
   });
   activeProject = projectList[0];
+  localStorage.setItem('activeProject', JSON.stringify(activeProject));
 }
 
 // const defaultProject = new Project('Default');
