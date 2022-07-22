@@ -767,6 +767,10 @@ function Project(name) {
       projects[i].classList.remove('active');
     }
     activeProject = project;
+    // console.log('activeProject');
+    // console.log(activeProject);
+    // localStorage.setItem('activeProject', JSON.stringify(activeProject));
+    // console.log(JSON.parse(localStorage.getItem('activeProject')));
     projectDOM.classList.add('active');
     printTask();
   };
@@ -783,6 +787,7 @@ function Project(name) {
     makeActive(projectDOM, project);
     projectDOM.addEventListener('click', () => {
       makeActive(projectDOM, this);
+      localStorage.setItem('activeProject', JSON.stringify(activeProject));
     });
   };
 
@@ -859,22 +864,38 @@ overlay.onclick = function closeOverlay() {
   clearForm();
 };
 
+// localStorage.clear();
+
 if (!localStorage.getItem('projectList')) {
   const defaultProject = new Project('Default');
   projectList.push(defaultProject);
   activeProject = defaultProject;
   defaultProject.createDOM(defaultProject);
   localStorage.setItem('projectList', JSON.stringify(projectList));
+  localStorage.setItem('activeProject', JSON.stringify(activeProject));
 } else {
   const projectListStored = JSON.parse(localStorage.getItem('projectList'));
   projectListStored.forEach((project) => {
     const restoredProject = new Project(project.name);
-    activeProject = restoredProject;
     projectList.push(restoredProject);
     restoredProject.createDOM();
   });
-  activeProject = projectList[0];
-  localStorage.setItem('activeProject', JSON.stringify(activeProject));
+  projectList.forEach((project) => {
+    const storedActive = JSON.parse(localStorage.getItem('activeProject'));
+    if (project.name === storedActive.name) {
+      activeProject = project;
+      const projects = projectListDOM.children;
+      let activeProject0 = activeProject.name;
+      activeProject0 += '0';
+      for (let i = 0; i < projects.length; i++) {
+        if (projects[i].textContent === activeProject0) {
+          const projectDOM = projects[i];
+          activeProject.makeActive(projectDOM, activeProject);
+        }
+      }
+    }
+  });
+  // activeProject = projectList[0];
 }
 
 // const defaultProject = new Project('Default');
@@ -886,8 +907,6 @@ if (!localStorage.getItem('projectList')) {
 //     Menus that roll out when clicking projects. using animations
 //     Make Site Responsive
 //     Drop-Down Menus
-
-// localStorage.clear();
 
 })();
 
