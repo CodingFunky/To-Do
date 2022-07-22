@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable func-names */
 /* eslint-disable no-plusplus */
 import './style.css';
@@ -85,7 +86,6 @@ function ListItem(title, description, dueDate, priority, projectID) {
       descriptionDOM,
       dueDateDOM,
       priorityDOM,
-      projectID,
     );
 
     // todoContainer.appendChild(itemCard);
@@ -139,7 +139,7 @@ function Project(name) {
     printTask();
   };
 
-  const createDom = function (project) {
+  const createDOM = function (project) {
     const projectDOM = document.createElement('div');
     projectDOM.textContent = name;
     projectDOM.classList.add('project');
@@ -150,7 +150,7 @@ function Project(name) {
     projectListDOM.prepend(projectDOM);
     makeActive(projectDOM, project);
     projectDOM.addEventListener('click', () => {
-      makeActive(projectDOM, project);
+      makeActive(projectDOM, this);
     });
   };
 
@@ -160,9 +160,9 @@ function Project(name) {
   };
 
   return {
-    createDom,
     makeActive,
     printTask,
+    createDOM,
     updateCounter,
     taskList,
     name,
@@ -204,8 +204,9 @@ projectAddForm.addEventListener('keypress', (e) => {
     const name = projectAddForm.value;
     const newProject = new Project(name, true);
     projectList.push(newProject);
-    newProject.createDom(newProject);
+    newProject.createDOM(newProject);
     activeProject = newProject;
+    localStorage.setItem('projectList', JSON.stringify(projectList));
     projectAddForm.classList.remove('active');
     projectAddForm.value = '';
     newProject.printTask();
@@ -225,13 +226,31 @@ overlay.onclick = function closeOverlay() {
   clearForm();
 };
 
+if (!localStorage.getItem('projectList')) {
+  const defaultProject = new Project('Default');
+  projectList.push(defaultProject);
+  activeProject = defaultProject;
+  defaultProject.createDOM(defaultProject);
+  localStorage.setItem('projectList', JSON.stringify(projectList));
+} else {
+  const projectListStored = JSON.parse(localStorage.getItem('projectList'));
+  projectListStored.forEach((project) => {
+    const restoredProject = new Project(project.name);
+    activeProject = restoredProject;
+    projectList.push(restoredProject);
+    restoredProject.createDOM();
+  });
+  activeProject = projectList[0];
+}
 
-const defaultProject = new Project('Default');
-projectList.push(defaultProject);
-activeProject = defaultProject;
-defaultProject.createDom(defaultProject);
+// const defaultProject = new Project('Default');
+// projectList.push(defaultProject);
+// activeProject = defaultProject;
+// defaultProject.createDOM(defaultProject);
 
 // Features to add
 //     Menus that roll out when clicking projects. using animations
 //     Make Site Responsive
 //     Drop-Down Menus
+
+// localStorage.clear();
