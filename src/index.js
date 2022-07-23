@@ -11,6 +11,7 @@ const newDueDate = document.querySelector('#dueDate');
 const newPriority = document.querySelector('#priority');
 const submitBtn = document.querySelector('#submit');
 const overlay = document.querySelector('.overlay');
+const transparentOverlay = document.querySelector('#transparent-overlay');
 const addBtn = document.querySelector('#addBtn');
 const submitCard = document.querySelector('.submitCard');
 const projectListDOM = document.querySelector('.project-list');
@@ -151,6 +152,34 @@ function Project(name) {
     taskNumDOM.textContent = taskList.length;
     projectDOM.appendChild(taskNumDOM);
 
+    const dropMenuBtn = document.createElement('div');
+    dropMenuBtn.classList.add('dropMenuBtn');
+    dropMenuBtn.textContent = '...';
+
+    const dropMenu = document.createElement('div');
+    dropMenu.classList.add('dropMenu');
+
+    const dropMenuArch = document.createElement('div');
+    dropMenuArch.classList.add('dropMenuArch');
+    dropMenuArch.textContent = 'Archive';
+
+    const dropMenuDel = document.createElement('div');
+    dropMenuDel.classList.add('dropMenuDel');
+    dropMenuDel.textContent = 'delete';
+    dropMenuDel.addEventListener('click', () => {
+      if (confirm('Are you sure to delete this project?')) {
+        projectDOM.remove();
+        transparentOverlay.classList.remove('active');
+      }
+    });
+
+    dropMenu.append(dropMenuArch, dropMenuDel);
+    projectDOM.append(dropMenuBtn, dropMenu);
+    dropMenuBtn.addEventListener('click', () => {
+      dropMenu.classList.toggle('active');
+      transparentOverlay.classList.toggle('active');
+    });
+
     projectListDOM.prepend(projectDOM);
     makeActive(projectDOM, project);
     projectDOM.addEventListener('click', () => {
@@ -224,6 +253,12 @@ altAddContainer.addEventListener('click', () => {
   overlay.classList.add('active');
   removeAllChildrenDOM(projectSelector);
   printOptions();
+});
+
+transparentOverlay.addEventListener('click', () => {
+  const dropMenu = document.querySelector('.dropMenu');
+  dropMenu.classList.remove('active');
+  transparentOverlay.classList.remove('active');
 });
 
 overlay.onclick = function closeOverlay() {

@@ -118,6 +118,7 @@ img {
     padding-top: 0px;
 }
 .project {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,14 +130,43 @@ img {
 }
 .project:hover {
     background-color: rgb(231, 228, 228);
-
 }
 .project.active {
     background-color: rgb(231, 228, 228);
 }
+.project:hover > .dropMenuBtn {
+    display: flex;
+    padding-right: 15px;
+}
+.project:hover > .taskNum {
+    display: none;
+}
 .taskNum {
     color: rgb(186, 176, 176);
     padding-right: 15px;
+}
+.dropMenuBtn {
+    display: none;
+}
+.dropMenu {
+    cursor: default;
+    display: none;
+    z-index: 2;
+    /* -webkit-box-shadow: 0px 10px 13px -7px #000000, -19px 5px 33px -8px rgba(0,0,0,0.23); 
+    box-shadow: 0px 10px 13px -7px #000000, -19px 5px 33px -8px rgba(0,0,0,0.23); */
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    background-color: white;
+    width: 150px;
+    height: 200px;
+    border: solid lightgray 1px;
+}
+.dropMenu.active {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 .fa-thin.fa-plus {
     margin: 20px;
@@ -265,6 +295,19 @@ img {
 }
 #itemDescBox {
     text-overflow: ellipsis
+}
+.transparent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+.transparent-overlay.active {
+    display: block;
 }
 .overlay {
     position: fixed;
