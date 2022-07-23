@@ -799,10 +799,8 @@ function Project(name) {
     dropMenuDel.classList.add('dropMenuDel');
     dropMenuDel.textContent = 'delete';
     dropMenuDel.addEventListener('click', () => {
-      if (confirm('Are you sure to delete this project?')) {
-        projectDOM.remove();
-        transparentOverlay.classList.remove('active');
-      }
+      projectDOM.remove();
+      transparentOverlay.classList.remove('active');
     });
 
     dropMenu.append(dropMenuArch, dropMenuDel);
