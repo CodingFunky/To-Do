@@ -280,11 +280,11 @@ img {
     white-space: nowrap;
     text-overflow: ellipsis
 }
-.deleteBtn {
-    width: 10%;
-}
 .itemPriority {
     width: 10%;
+}
+.itemDueDate {
+    color: #db4c3f;
 }
 .dueDate-Container {
     display: flex;
@@ -332,7 +332,7 @@ img {
 .submitCard {
     border-radius: 5%;
     position: fixed;
-    top: 105%;
+    top: 110%;
     left: 35%;
     font-size: larger;
     z-index: 2;
