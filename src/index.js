@@ -159,15 +159,22 @@ function Project(name) {
     dropMenuArch.classList.add('dropMenuArch');
     dropMenuArch.textContent = 'Archive';
 
+    const dropMenuDelContainer = document.createElement('div');
+    dropMenuDelContainer.classList.add('dropMenuDelContainer');
+
+    const dropMenuDelIcon = document.createElement('i');
+    dropMenuDelIcon.classList.add('fa-solid', 'fa-trash-can');
+
     const dropMenuDel = document.createElement('div');
     dropMenuDel.classList.add('dropMenuDel');
-    dropMenuDel.textContent = 'delete';
+    dropMenuDel.textContent = 'Delete project';
     dropMenuDel.addEventListener('click', () => {
       projectDOM.remove();
       transparentOverlay.classList.remove('active');
     });
 
-    dropMenu.append(dropMenuArch, dropMenuDel);
+    dropMenuDelContainer.append(dropMenuDelIcon, dropMenuDel);
+    dropMenu.append(dropMenuArch, dropMenuDelContainer);
     projectDOM.append(dropMenuBtn, dropMenu);
     dropMenuBtn.addEventListener('click', () => {
       dropMenu.classList.toggle('active');
