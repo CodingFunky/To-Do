@@ -768,10 +768,6 @@ function Project(name) {
       projects[i].classList.remove('active');
     }
     activeProject = project;
-    // console.log('activeProject');
-    // console.log(activeProject);
-    // localStorage.setItem('activeProject', JSON.stringify(activeProject));
-    // console.log(JSON.parse(localStorage.getItem('activeProject')));
     projectDOM.classList.add('active');
     printTask();
   };
@@ -886,7 +882,7 @@ altAddContainer.addEventListener('click', () => {
 });
 
 transparentOverlay.addEventListener('click', () => {
-  const dropMenu = document.querySelector('.dropMenu');
+  const dropMenu = document.querySelector('.dropMenu.active');
   dropMenu.classList.remove('active');
   transparentOverlay.classList.remove('active');
 });
@@ -917,12 +913,13 @@ if (!localStorage.getItem('projectList')) {
     const storedActive = JSON.parse(localStorage.getItem('activeProject'));
     if (project.name === storedActive.name) {
       activeProject = project;
+      console.log(activeProject);
       const projects = projectListDOM.children;
-      let activeProject0 = activeProject.name;
-      activeProject0 += '0';
+      console.log(projects);
       for (let i = 0; i < projects.length; i++) {
-        if (projects[i].textContent === activeProject0) {
+        if (projects[i].firstChild.textContent === activeProject.name) {
           const projectDOM = projects[i];
+          console.log(projectDOM);
           activeProject.makeActive(projectDOM, activeProject);
         }
       }
