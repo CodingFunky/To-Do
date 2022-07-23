@@ -155,10 +155,33 @@ function Project(name) {
     const dropMenu = document.createElement('div');
     dropMenu.classList.add('dropMenu');
 
+    // Edit Button
+    const editBtn = document.createElement('div');
+    editBtn.classList.add('project-edit-btn');
+
+    const editIcon = document.createElement('i');
+    editIcon.classList.add('fa-solid', 'fa-pen');
+
+    const editText = document.createElement('div');
+    editText.classList.add('project-edit-text');
+    editText.textContent = 'Edit Project';
+
+    editBtn.append(editIcon, editText);
+
+    // Archive Button
+    const archiveContainer = document.createElement('div');
+    archiveContainer.classList.add('archive-container');
+
+    const archiveIcon = document.createElement('i');
+    archiveIcon.classList.add('fa-solid', 'fa-box-archive');
+
     const dropMenuArch = document.createElement('div');
     dropMenuArch.classList.add('dropMenuArch');
     dropMenuArch.textContent = 'Archive';
 
+    archiveContainer.append(archiveIcon, dropMenuArch);
+
+    // Delete button
     const dropMenuDelContainer = document.createElement('div');
     dropMenuDelContainer.classList.add('dropMenuDelContainer');
 
@@ -172,9 +195,9 @@ function Project(name) {
       projectDOM.remove();
       transparentOverlay.classList.remove('active');
     });
-
     dropMenuDelContainer.append(dropMenuDelIcon, dropMenuDel);
-    dropMenu.append(dropMenuArch, dropMenuDelContainer);
+
+    dropMenu.append(editBtn, archiveContainer, dropMenuDelContainer);
     projectDOM.append(dropMenuBtn, dropMenu);
     dropMenuBtn.addEventListener('click', () => {
       dropMenu.classList.toggle('active');

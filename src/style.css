@@ -157,8 +157,19 @@ img {
 }
 .dropMenuBtn {
     display: none;
+    height: 28px;
+    border-radius: 50%;
+    /* background-color: #db4c3f; */
+}
+.dropMenuBtn:hover { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
 }
 .dropMenu {
+    font-size: 0.9em;
     cursor: default;
     display: none;
     z-index: 2;
@@ -171,20 +182,47 @@ img {
     width: 150px;
     height: 200px;
     border: solid lightgray 1px;
+    transition-duration: 0.5s;
 }
 .dropMenu.active {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.dropMenu >:hover {
+    transform: scale(1.1);
+    /* background-color: lightgray; */
+}
+.dropMenu * {
+    height: 30%;
+    align-items: center;
+}
+.project-edit-btn {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 80%;
+    border-bottom: solid lightgray 1px;
+    /* padding-bottom: 25px; */
+}
+.archive-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 80%;
+    border-bottom: solid lightgray 1px;
+    /* padding-bottom: 25px; */
+
 }
 .dropMenuDelContainer {
     position: relative;
     display: flex;
     flex-direction: row;
-    padding-left: 20px;
-    gap: 15px;
-    width: 100%;
+    gap: 10px;
+    width: 80%;
 }
 .fa-thin.fa-plus {
     margin: 20px;
