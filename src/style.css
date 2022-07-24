@@ -1,6 +1,13 @@
+:root {
+    --main-color: white;
+    --accent-color: #A7C2E5;
+    --third-color: #f7fafe;
+    --fourth-color: #c7c9ce;
+    --dark-color: #000A14;
+}
 body {
     font-family: 'Open Sans', sans-serif;
-
+    color: var(--dark-color);
     margin: 0;
 }
 i {
@@ -27,7 +34,7 @@ img {
     border-radius: 3px;
 }
 .nav.btn:hover {
-    background-color: rgb(231, 228, 228);
+    background-color: var(--fourth-color);
     /* opacity: 0.5; */
 }
 #page-container {
@@ -36,7 +43,7 @@ img {
     display: flex;
 }
 .nav-bar {
-    background-color: #db4c3f;
+    background-color: var(--accent-color);
     height: 45px;
     display: flex;
     justify-content: space-between;
@@ -72,7 +79,7 @@ img {
 .left-sidebar {
     display: flex;
     flex-direction: column;
-    background-color: #f7f7f7;
+    background-color: var(--third-color);
     width: 28%;
     height: 100vh;
 }
@@ -105,7 +112,7 @@ img {
     border-radius: 10px;
 }
 #project-addBtn:hover {
-    background-color: rgb(231, 228, 228);
+    background-color: var(--fourth-color);
 }
 .addProject-form {
     width: 55%;
@@ -139,10 +146,10 @@ img {
     border-radius: 10px;
 }
 .project:hover {
-    background-color: rgb(231, 228, 228);
+    background-color: var(--fourth-color);
 }
 .project.active {
-    background-color: rgb(231, 228, 228);
+    background-color: var(--fourth-color);
 }
 .project:hover > .dropMenuBtn {
     display: flex;
@@ -152,14 +159,14 @@ img {
     display: none;
 }
 .taskNum {
-    color: rgb(186, 176, 176);
+    color: var(--dark-color);
     padding-right: 15px;
 }
 .dropMenuBtn {
     display: none;
     height: 28px;
     border-radius: 50%;
-    /* background-color: #db4c3f; */
+    /* background-color: var(--accent-color); */
 }
 .dropMenuBtn:hover { 
     display: flex;
@@ -259,14 +266,14 @@ img {
     text-align: center;
 }
 .completeBtn:hover {
-    /* background-color: #db4c3f; */
+    /* background-color: var(--accent-color); */
     transform: scale(1.1);
 }
 .checkMark {
     color: white;
 }
 .checkMark:hover {
-    color: #db4c3f;
+    color: var(--accent-color);
 }
 .task-header {
     font-weight: 600;
@@ -284,7 +291,8 @@ img {
     width: 10%;
 }
 .itemDueDate {
-    color: #db4c3f;
+    color: var(--accent-color);
+    font-weight: bold;
 }
 .dueDate-Container {
     display: flex;
@@ -307,11 +315,11 @@ img {
 }
 .altAdd-container:hover {
     cursor: pointer;
-    color: #db4c3f;
+    color: var(--accent-color);
     transform: scale(1.1);
 }
 .altAdd-container:hover > .alt-plusSign{
-    background-color: #db4c3f;
+    background-color: var(--accent-color);
     color: white;
 }
 .alt-plusSign {
@@ -319,11 +327,11 @@ img {
     height: 19px;
     width: 19px;
     text-align: center;
-    color: #db4c3f;
+    color: var(--accent-color);
     border-radius: 50%;
 }
 /* .alt-plusSign:hover{
-    background-color: #db4c3f;
+    background-color: var(--accent-color);
     color: white;
 } */
 .altAddBtn-text {

@@ -192,6 +192,7 @@ function Project(name) {
     dropMenuDel.classList.add('dropMenuDel');
     dropMenuDel.textContent = 'Delete project';
     dropMenuDel.addEventListener('click', () => {
+      // projectDOM.firstChild.textContent
       projectDOM.remove();
       transparentOverlay.classList.remove('active');
     });
