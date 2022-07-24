@@ -9,6 +9,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: var(--dark-color);
     margin: 0;
+    font-size: 15px;
 }
 i {
     font-style: normal;
@@ -26,7 +27,7 @@ img {
 .nav.btn {
     /* font-family: sans-serif; */
     color: white;
-    height: 1.9em;
+    height: 3em;
     width: 1.9em;
     display: flex;
     justify-content: center;
@@ -54,7 +55,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 1.6em;
+    margin-left: 2.7em;
     gap: 1.6em;
 }
 .right-nav {
@@ -63,7 +64,7 @@ img {
     justify-content: center;
     align-items: center;
     gap: 1.6em;
-    margin-right: 1.6em;
+    margin-right: 2.7em;
 }
 #addBtn {
     font-family: sans-serif;
@@ -93,7 +94,7 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 2.4em;
+    margin-top: 24px;
 }
 #project-title {
     font-weight: 600;
@@ -131,6 +132,7 @@ img {
 }
 .project-list {
     /* border: solid black 1px; */
+    font-weight: 500;
     padding: 20px;
     padding-top: 0px;
 }
@@ -236,7 +238,7 @@ img {
     font-family: sans-serif;
 }
 #todo-hero {
-    padding: 55px;
+    padding: 45px;
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -277,7 +279,7 @@ img {
 }
 .task-header {
     font-weight: 600;
-    font-size: 22px;
+    font-size: 17px;
 }
 .itemDesc {
     color: rgb(108, 103, 103);
