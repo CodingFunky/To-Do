@@ -175,10 +175,11 @@ function Project(name) {
       dropMenu.classList.remove('active');
 
       const editForm = document.createElement('input');
-      editForm.classList.add('editForm');
+      editForm.classList.add('edit-form');
       editForm.classList.add('active');
       editForm.type = 'text';
       editForm.name = 'editForm';
+      editForm.maxLength = '18';
 
       projectDOM.textContent = '';
       projectDOM.prepend(editForm);
@@ -188,17 +189,11 @@ function Project(name) {
         if (e.key === 'Enter') {
           editForm.classList.remove('active');
           projectDOM.textContent = e.target.value;
+          projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
           activeProject.name = e.target.value;
           localStorage.setItem('projectList', JSON.stringify(projectList));
         }
       });
-      // projectList.forEach((proj) => {
-      //   if (proj.name === projectDOM.firstChild.textContent) {
-      //     const index = projectList.indexOf(proj);
-      //     projectList[index].name = 
-      //   }
-      // });
-      // localStorage.setItem('projectList', JSON.stringify(projectList));
     });
 
     editBtn.append(editIcon, editText);

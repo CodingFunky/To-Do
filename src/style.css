@@ -196,6 +196,9 @@ img {
 .project.active {
     background-color: var(--fourth-color);
 }
+.project.hidden.active {
+    display: none;
+}
 .project:hover > .dropMenuBtn {
     display: flex;
     padding-right: 15px;
