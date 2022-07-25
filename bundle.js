@@ -932,6 +932,11 @@ submitBtn.addEventListener('click', () => {
   submitCard.classList.remove('active');
   overlay.classList.remove('active');
   clearForm();
+  localStorage.setItem(activeProject.name, JSON.stringify(activeProject.taskList));
+  console.log('activeProject.name');
+  console.log(JSON.parse(localStorage.getItem(activeProject.name)));
+  console.log('activeproject taskList');
+  console.log(activeProject.taskList);
 });
 projectArrow.addEventListener('click', () => {
   const projectLi = projectListDOM.children;
@@ -955,7 +960,6 @@ projectAddBtn.addEventListener('click', () => {
 projectAddForm.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     if (e.target.value) {
-      console.log(e.target.value);
       const name = projectAddForm.value;
       const newProject = new Project(name, true);
       projectList.push(newProject);
@@ -998,13 +1002,23 @@ if (!localStorage.getItem('projectList')) {
   defaultProject.createDOM(defaultProject);
   localStorage.setItem('projectList', JSON.stringify(projectList));
   localStorage.setItem('activeProject', JSON.stringify(activeProject));
+  projectList.forEach((project) => {
+    localStorage.setItem(project.name, JSON.stringify(project.taskList));
+  });
 } else {
+  // Remake all project objects push them to list and make DOM
   const projectListStored = JSON.parse(localStorage.getItem('projectList'));
   projectListStored.forEach((project) => {
     const restoredProject = new Project(project.name);
     projectList.push(restoredProject);
+    const restoredTask = JSON.parse(localStorage.getItem(restoredProject.name));
+    // restoredProject.taskList = restoredTask;
+    console.log('restoredTask');
+    console.log(restoredTask);
+    console.log(restoredTask[0]);
     restoredProject.createDOM();
   });
+  // Restores activeProject
   projectList.forEach((project) => {
     const storedActive = JSON.parse(localStorage.getItem('activeProject'));
     if (project.name === storedActive.name) {
@@ -1020,7 +1034,6 @@ if (!localStorage.getItem('projectList')) {
   });
   // activeProject = projectList[0];
 }
-
 // const defaultProject = new Project('Default');
 // projectList.push(defaultProject);
 // activeProject = defaultProject;
