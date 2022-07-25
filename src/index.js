@@ -187,11 +187,16 @@ function Project(name) {
 
       editForm.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-          editForm.classList.remove('active');
-          projectDOM.textContent = e.target.value;
-          projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
-          activeProject.name = e.target.value;
-          localStorage.setItem('projectList', JSON.stringify(projectList));
+          if (e.target.value) {
+            editForm.classList.remove('active');
+            projectDOM.textContent = e.target.value;
+            projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
+            activeProject.name = e.target.value;
+            localStorage.setItem('projectList', JSON.stringify(projectList));
+          } else {
+            projectDOM.textContent = activeProject.name;
+            projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
+          }
         }
       });
     });

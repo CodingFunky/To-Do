@@ -261,6 +261,11 @@ img {
     border-bottom: solid lightgray 1px;
     /* padding-bottom: 25px; */
 }
+.edit-form {
+    border: none;
+    outline: none;
+    border: solid lightgray 1px;
+}
 .archive-container {
     position: relative;
     display: flex;
