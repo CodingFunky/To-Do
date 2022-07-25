@@ -26,6 +26,8 @@ const projectArrow = document.querySelector('#project-arrow');
 const burgerMenu = document.querySelector('#burger-menu');
 const leftSideBar = document.querySelector('.left-sidebar');
 const leftSideBarOverlay = document.querySelector('#left-sidebar-overlay');
+const notificationBell = document.querySelector('.fa-bell');
+const notificationMenu = document.querySelector('.notification-menu');
 
 let activeProject = [];
 const projectList = [];
@@ -284,6 +286,9 @@ function clearForm() {
 burgerMenu.addEventListener('click', () => {
   leftSideBar.classList.toggle('active');
   leftSideBarOverlay.classList.toggle('active');
+});
+notificationBell.addEventListener('click', () => {
+  notificationMenu.classList.toggle('active');
 });
 leftSideBarOverlay.addEventListener('click', () => {
   leftSideBar.classList.remove('active');
