@@ -170,6 +170,44 @@ function Project(name) {
     editText.classList.add('project-edit-text');
     editText.textContent = 'Edit Project';
 
+    editBtn.addEventListener('click', () => {
+      transparentOverlay.classList.remove('active');
+      dropMenu.classList.remove('active');
+
+      const editForm = document.createElement('input');
+      editForm.classList.add('edit-form');
+      editForm.classList.add('active');
+      editForm.type = 'text';
+      editForm.name = 'editForm';
+      editForm.maxLength = '18';
+
+      projectDOM.textContent = '';
+      projectDOM.prepend(editForm);
+      editForm.focus();
+      editForm.value = activeProject.name;
+
+      editForm.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          if (e.target.value) {
+            editForm.classList.remove('active');
+            projectDOM.textContent = e.target.value;
+            projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
+            activeProject.name = e.target.value;
+            localStorage.setItem('projectList', JSON.stringify(projectList));
+            localStorage.setItem('activeProject', JSON.stringify(activeProject));
+          } else {
+            projectDOM.textContent = activeProject.name;
+            projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
+          }
+        }
+      });
+      editForm.addEventListener('focusout', () => {
+        editForm.classList.remove('active');
+        projectDOM.textContent = activeProject.name;
+        projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
+      });
+    });
+
     editBtn.append(editIcon, editText);
 
     // Archive Button
@@ -284,16 +322,19 @@ projectAddBtn.addEventListener('click', () => {
 
 projectAddForm.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    const name = projectAddForm.value;
-    const newProject = new Project(name, true);
-    projectList.push(newProject);
-    newProject.createDOM(newProject);
-    activeProject = newProject;
-    localStorage.setItem('projectList', JSON.stringify(projectList));
-    localStorage.setItem('activeProject', JSON.stringify(activeProject));
-    projectAddForm.classList.remove('active');
-    projectAddForm.value = '';
-    newProject.printTask();
+    if (e.target.value) {
+      console.log(e.target.value);
+      const name = projectAddForm.value;
+      const newProject = new Project(name, true);
+      projectList.push(newProject);
+      newProject.createDOM(newProject);
+      activeProject = newProject;
+      localStorage.setItem('projectList', JSON.stringify(projectList));
+      localStorage.setItem('activeProject', JSON.stringify(activeProject));
+      projectAddForm.classList.remove('active');
+      projectAddForm.value = '';
+      newProject.printTask();
+    }
   }
 });
 

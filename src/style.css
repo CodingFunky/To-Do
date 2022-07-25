@@ -196,6 +196,9 @@ img {
 .project.active {
     background-color: var(--fourth-color);
 }
+.project.hidden.active {
+    display: none;
+}
 .project:hover > .dropMenuBtn {
     display: flex;
     padding-right: 15px;
@@ -257,6 +260,11 @@ img {
     width: 80%;
     border-bottom: solid lightgray 1px;
     /* padding-bottom: 25px; */
+}
+.edit-form {
+    border: none;
+    outline: none;
+    border: solid lightgray 1px;
 }
 .archive-container {
     position: relative;
