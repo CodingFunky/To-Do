@@ -25,6 +25,7 @@ const altAddContainer = document.querySelector('.altAdd-container');
 const projectArrow = document.querySelector('#project-arrow');
 const burgerMenu = document.querySelector('#burger-menu');
 const leftSideBar = document.querySelector('.left-sidebar');
+const leftSideBarOverlay = document.querySelector('#left-sidebar-overlay');
 
 let activeProject = [];
 const projectList = [];
@@ -243,7 +244,12 @@ function clearForm() {
   newDes.value = '';
 }
 burgerMenu.addEventListener('click', () => {
-  leftSideBar.classList.toggle('unactive');
+  leftSideBar.classList.toggle('active');
+  leftSideBarOverlay.classList.toggle('active');
+});
+leftSideBarOverlay.addEventListener('click', () => {
+  leftSideBar.classList.remove('active');
+  leftSideBarOverlay.classList.remove('active');
 });
 submitBtn.addEventListener('click', () => {
   const newItem = new ListItem(

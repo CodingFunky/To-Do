@@ -15,6 +15,7 @@ body {
     color: var(--dark-color);
     margin: 0;
     font-size: 15px;
+    min-width: 550px;
 }
 i {
     font-style: normal;
@@ -404,6 +405,19 @@ img {
 #itemDescBox {
     text-overflow: ellipsis
 }
+.left-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+}
+.left-sidebar-overlay.active {
+    display: block;
+}
 .transparent-overlay {
     position: fixed;
     top: 0;
@@ -433,10 +447,7 @@ img {
 
   @media screen and (max-width: 725px) {
     .nav-bar {
-        justify-content: flex-end;
-    }
-    .left-nav {
-        flex-direction: row-reverse;
+        z-index: 2;
     }
     .right-nav {
         display: none;
@@ -447,18 +458,20 @@ img {
         align-items: center;
     }
     .left-sidebar {
+        z-index: 2;
         /* width: auto; */
         justify-content: flex-start;
-        width: 50%;
+        width: 35%;
         height: 100%;
         border-radius: 5%;
-        background-color: white;
-        opacity: 0;
+        /* background-color: white; */
         position: absolute;
-        transform: translateX(-1000px);
-        transition: opacity 150ms ease-in-out;
+        opacity: 0;
+        transform: translateX(-600px);
+        transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
     }
-    .left-sidebar.unactive {
+    .left-sidebar.active {
+        transform: translateX(-100%);
         opacity: 100;
     }
     .project-header {
