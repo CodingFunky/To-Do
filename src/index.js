@@ -22,6 +22,7 @@ const projectSelector = document.querySelector('#project-selector');
 const todoHero = document.querySelector('#todo-hero');
 const taskHeader = document.querySelector('.task-header');
 const altAddContainer = document.querySelector('.altAdd-container');
+const projectArrow = document.querySelector('#project-arrow');
 
 let activeProject = [];
 const projectList = [];
@@ -141,7 +142,7 @@ function Project(name) {
   };
 
   const createDOM = function (project) {
-    const projectDOM = document.createElement('div');
+    const projectDOM = document.createElement('li');
     projectDOM.textContent = name;
     projectDOM.classList.add('project');
 
@@ -192,9 +193,16 @@ function Project(name) {
     dropMenuDel.classList.add('dropMenuDel');
     dropMenuDel.textContent = 'Delete project';
     dropMenuDel.addEventListener('click', () => {
-      // projectDOM.firstChild.textContent
-      projectDOM.remove();
+      // projectDOM.remove();
       transparentOverlay.classList.remove('active');
+      projectList.forEach((proj) => {
+        if (proj.name === projectDOM.firstChild.textContent) {
+          const index = projectList.indexOf(proj);
+          projectList.splice(index, 1);
+        }
+      });
+      localStorage.setItem('projectList', JSON.stringify(projectList));
+      projectDOM.remove();
     });
     dropMenuDelContainer.append(dropMenuDelIcon, dropMenuDel);
 
@@ -245,7 +253,14 @@ submitBtn.addEventListener('click', () => {
   overlay.classList.remove('active');
   clearForm();
 });
-
+projectArrow.addEventListener('click', () => {
+  // projectListDOM.classList.toggle('unactive');
+  const projectLi = projectListDOM.children;
+  Array.from(projectLi).forEach((project) => {
+    project.classList.toggle('hide');
+  });
+  projectArrow.classList.toggle('active');
+});
 addBtn.addEventListener('click', () => {
   submitCard.classList.add('active');
   overlay.classList.add('active');
@@ -312,13 +327,10 @@ if (!localStorage.getItem('projectList')) {
     const storedActive = JSON.parse(localStorage.getItem('activeProject'));
     if (project.name === storedActive.name) {
       activeProject = project;
-      console.log(activeProject);
       const projects = projectListDOM.children;
-      console.log(projects);
       for (let i = 0; i < projects.length; i++) {
         if (projects[i].firstChild.textContent === activeProject.name) {
           const projectDOM = projects[i];
-          console.log(projectDOM);
           activeProject.makeActive(projectDOM, activeProject);
         }
       }
