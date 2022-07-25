@@ -63,6 +63,9 @@ img {
     margin-left: 2.7em;
     gap: 1.6em;
 }
+#burger-menu {
+
+}
 .right-nav {
     height: 100%;
     display: flex;
@@ -88,6 +91,11 @@ img {
     background-color: var(--third-color);
     width: 28%;
     height: 100vh;
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+.left-sidebar.unactive {
+    transform: translateX(-10px);
+    opacity: 0;
 }
 .project-bar {
     display: flex;
@@ -423,7 +431,7 @@ img {
       display: block;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 725px) {
     .nav-bar {
         justify-content: flex-end;
     }
@@ -433,21 +441,31 @@ img {
     .right-nav {
         display: none;
     }
-    #hero {flex-direction: column;
-        justify-content: center;
+    #hero {
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
     }
     .left-sidebar {
         /* width: auto; */
         justify-content: flex-start;
+        width: 50%;
         height: 100%;
         border-radius: 5%;
         background-color: white;
+        opacity: 0;
+        position: absolute;
+        transform: translateX(-1000px);
+        transition: opacity 150ms ease-in-out;
+    }
+    .left-sidebar.unactive {
+        opacity: 100;
     }
     .project-header {
         margin-top: 0;
     }
     #todo-hero {
         padding: 0px;
+        margin-top: 50px;
     }
   }

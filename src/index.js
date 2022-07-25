@@ -23,6 +23,8 @@ const todoHero = document.querySelector('#todo-hero');
 const taskHeader = document.querySelector('.task-header');
 const altAddContainer = document.querySelector('.altAdd-container');
 const projectArrow = document.querySelector('#project-arrow');
+const burgerMenu = document.querySelector('#burger-menu');
+const leftSideBar = document.querySelector('.left-sidebar');
 
 let activeProject = [];
 const projectList = [];
@@ -240,7 +242,9 @@ function clearForm() {
   newTitle.value = '';
   newDes.value = '';
 }
-
+burgerMenu.addEventListener('click', () => {
+  leftSideBar.classList.toggle('unactive');
+});
 submitBtn.addEventListener('click', () => {
   const newItem = new ListItem(
     newTitle.value,
@@ -254,7 +258,6 @@ submitBtn.addEventListener('click', () => {
   clearForm();
 });
 projectArrow.addEventListener('click', () => {
-  // projectListDOM.classList.toggle('unactive');
   const projectLi = projectListDOM.children;
   Array.from(projectLi).forEach((project) => {
     project.classList.toggle('hide');
