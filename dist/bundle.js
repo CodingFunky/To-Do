@@ -916,16 +916,19 @@ projectAddBtn.addEventListener('click', () => {
 
 projectAddForm.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    const name = projectAddForm.value;
-    const newProject = new Project(name, true);
-    projectList.push(newProject);
-    newProject.createDOM(newProject);
-    activeProject = newProject;
-    localStorage.setItem('projectList', JSON.stringify(projectList));
-    localStorage.setItem('activeProject', JSON.stringify(activeProject));
-    projectAddForm.classList.remove('active');
-    projectAddForm.value = '';
-    newProject.printTask();
+    if (e.target.value) {
+      console.log(e.target.value);
+      const name = projectAddForm.value;
+      const newProject = new Project(name, true);
+      projectList.push(newProject);
+      newProject.createDOM(newProject);
+      activeProject = newProject;
+      localStorage.setItem('projectList', JSON.stringify(projectList));
+      localStorage.setItem('activeProject', JSON.stringify(activeProject));
+      projectAddForm.classList.remove('active');
+      projectAddForm.value = '';
+      newProject.printTask();
+    }
   }
 });
 
