@@ -170,6 +170,37 @@ function Project(name) {
     editText.classList.add('project-edit-text');
     editText.textContent = 'Edit Project';
 
+    editBtn.addEventListener('click', () => {
+      transparentOverlay.classList.remove('active');
+      dropMenu.classList.remove('active');
+
+      const editForm = document.createElement('input');
+      editForm.classList.add('editForm');
+      editForm.classList.add('active');
+      editForm.type = 'text';
+      editForm.name = 'editForm';
+
+      projectDOM.textContent = '';
+      projectDOM.prepend(editForm);
+      editForm.focus();
+
+      editForm.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          editForm.classList.remove('active');
+          projectDOM.textContent = e.target.value;
+          activeProject.name = e.target.value;
+          localStorage.setItem('projectList', JSON.stringify(projectList));
+        }
+      });
+      // projectList.forEach((proj) => {
+      //   if (proj.name === projectDOM.firstChild.textContent) {
+      //     const index = projectList.indexOf(proj);
+      //     projectList[index].name = 
+      //   }
+      // });
+      // localStorage.setItem('projectList', JSON.stringify(projectList));
+    });
+
     editBtn.append(editIcon, editText);
 
     // Archive Button
