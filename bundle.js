@@ -1015,7 +1015,7 @@ if (!localStorage.getItem('projectList')) {
     // restoredProject.taskList = restoredTask;
     console.log('restoredTask');
     console.log(restoredTask);
-    console.log(restoredTask[0]);
+    // console.log(restoredTask[0]);
     restoredProject.createDOM();
   });
   // Restores activeProject
