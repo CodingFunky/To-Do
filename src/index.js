@@ -28,6 +28,7 @@ const leftSideBar = document.querySelector('.left-sidebar');
 const leftSideBarOverlay = document.querySelector('#left-sidebar-overlay');
 const notificationBell = document.querySelector('.fa-bell');
 const notificationMenu = document.querySelector('.notification-menu');
+const notificationOverlay = document.querySelector('#notification-overlay');
 
 let activeProject = [];
 const projectList = [];
@@ -289,6 +290,7 @@ burgerMenu.addEventListener('click', () => {
 });
 notificationBell.addEventListener('click', () => {
   notificationMenu.classList.toggle('active');
+  notificationOverlay.classList.toggle('active');
 });
 leftSideBarOverlay.addEventListener('click', () => {
   leftSideBar.classList.remove('active');
@@ -354,6 +356,10 @@ altAddContainer.addEventListener('click', () => {
   printOptions();
 });
 
+notificationOverlay.addEventListener('click', () => {
+  notificationOverlay.classList.remove('active');
+  notificationMenu.classList.remove('active');
+});
 transparentOverlay.addEventListener('click', () => {
   const dropMenu = document.querySelector('.dropMenu.active');
   dropMenu.classList.remove('active');

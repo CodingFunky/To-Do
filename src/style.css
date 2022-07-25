@@ -82,6 +82,9 @@ img {
     position: relative;
 }
 .notification-menu {
+    font-size: 1.2em;
+    font-weight: 300;
+    z-index: 2;
     display: none;
 }
 .notification-menu.active {
@@ -444,6 +447,19 @@ img {
 }
 #itemDescBox {
     text-overflow: ellipsis
+}
+.notification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+.notification-overlay.active {
+    display: block;
 }
 .left-sidebar-overlay {
     position: fixed;
