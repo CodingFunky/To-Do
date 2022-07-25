@@ -816,6 +816,7 @@ function Project(name) {
       projectDOM.textContent = '';
       projectDOM.prepend(editForm);
       editForm.focus();
+      editForm.value = activeProject.name;
 
       editForm.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
