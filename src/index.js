@@ -194,6 +194,7 @@ function Project(name) {
             projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
             activeProject.name = e.target.value;
             localStorage.setItem('projectList', JSON.stringify(projectList));
+            localStorage.setItem('activeProject', JSON.stringify(activeProject));
           } else {
             projectDOM.textContent = activeProject.name;
             projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
