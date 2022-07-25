@@ -199,6 +199,11 @@ function Project(name) {
           }
         }
       });
+      editForm.addEventListener('focusout', () => {
+        editForm.classList.remove('active');
+        projectDOM.textContent = activeProject.name;
+        projectDOM.append(taskNumDOM, dropMenuBtn, dropMenu);
+      });
     });
 
     editBtn.append(editIcon, editText);
