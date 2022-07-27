@@ -423,7 +423,7 @@ if (!localStorage.getItem('projectList')) {
   projectListStored.forEach((project) => {
     const restoredProject = new Project(project.name);
     projectList.push(restoredProject);
-    const restoredTask = JSON.parse(localStorage.getItem(restoredProject.name));
+    // const restoredTask = JSON.parse(localStorage.getItem(restoredProject.name));
     // restoredProject.taskList = restoredTask;
     // console.log('restoredTask');
     // console.log(restoredTask);
