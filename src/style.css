@@ -101,6 +101,10 @@ img {
     border: solid lightgray 1px;
     border-radius: 5%;
 }
+.notification-text {
+    font-size: 0.9em;
+    text-align: center;
+}
 .top-border {
     border-top: solid lightgray 1px;
     margin-top: 5%;
@@ -506,7 +510,6 @@ img {
         z-index: 2;
     }
     .right-nav {
-        display: none;
     }
     #hero {
         flex-direction: column;
@@ -549,5 +552,23 @@ img {
     }
     .left-sidebar-overlay.active {
         display: block;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .left-sidebar {
+        justify-content: flex-start;
+        width: 75%;
+        height: 100%;
+        border-radius: 5%;
+        /* background-color: white; */
+        position: absolute;
+        opacity: 0;
+        transform: translateX(-600px);
+        transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+    }
+    .left-sidebar.active {
+        transform: translateX(-38%);
+        opacity: 100;
     }
   }

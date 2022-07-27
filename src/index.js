@@ -100,13 +100,17 @@ function ListItem(title, description, dueDate, priority, projectID) {
     // activeProject.taskList.push(itemCard)
 
     const projectSelected = projectSelector.value;
+    // Add card to DOM if added to active project
     if (projectSelected === activeProject.name) {
       todoContainer.appendChild(itemCard);
       activeProject.updateCounter();
     }
+
+    // adds to correct projects tasklist
     projectList.forEach((project) => {
       if (projectSelected === project.name) {
-        project.taskList.push(itemCard);
+        console.log('this');
+        project.taskList.push(this);
         project.updateCounter();
       }
     });
@@ -115,6 +119,7 @@ function ListItem(title, description, dueDate, priority, projectID) {
 }
 function Project(name) {
   this.name = name;
+  const self = this;
   const taskList = [];
   const taskNumDOM = document.createElement('div');
   taskNumDOM.classList.add('taskNum');
@@ -131,7 +136,14 @@ function Project(name) {
     todoHero.prepend(taskHeader);
 
     // printing task list from active project
+    console.log('self');
+    console.log(self);
+
     for (let i = 0; i < taskList.length; i++) {
+      this.taskList.forEach((task) => {
+        console.log(task);
+        console.log('task');
+      });
       todoContainer.appendChild(taskList[i]);
     }
   };
@@ -284,11 +296,25 @@ function clearForm() {
   newTitle.value = '';
   newDes.value = '';
 }
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+function getNewBOTD() {
+  fetch('https://bobsburgers-api.herokuapp.com/burgerOfTheDay/')
+    .then((res) => res.json())
+    .then((data) => {
+      const index = getRandomInt(data.length);
+      const burger = data[index].name;
+      console.log(burger);
+      document.querySelector('.notification-text').textContent = burger;
+    });
+}
 burgerMenu.addEventListener('click', () => {
   leftSideBar.classList.toggle('active');
   leftSideBarOverlay.classList.toggle('active');
 });
 notificationBell.addEventListener('click', () => {
+  getNewBOTD();
   notificationMenu.classList.toggle('active');
   notificationOverlay.classList.toggle('active');
 });
@@ -304,14 +330,21 @@ submitBtn.addEventListener('click', () => {
     newPriority.value,
   );
   newItem.createDOM(newItem);
+  // const projectSelected = projectSelector.value;
+  // projectList.forEach((project) => {
+  //   if (projectSelected === project.name) {
+  //     project.taskList.push(newItem);
+  //     project.updateCounter();
+  //   }
+  // });
   submitCard.classList.remove('active');
   overlay.classList.remove('active');
   clearForm();
   localStorage.setItem(activeProject.name, JSON.stringify(activeProject.taskList));
-  console.log('activeProject.name');
-  console.log(JSON.parse(localStorage.getItem(activeProject.name)));
-  console.log('activeproject taskList');
-  console.log(activeProject.taskList);
+  // console.log('activeProject.name');
+  // console.log(JSON.parse(localStorage.getItem(activeProject.name)));
+  // console.log('activeproject taskList');
+  // console.log(activeProject.taskList);
 });
 projectArrow.addEventListener('click', () => {
   const projectLi = projectListDOM.children;
@@ -392,8 +425,8 @@ if (!localStorage.getItem('projectList')) {
     projectList.push(restoredProject);
     const restoredTask = JSON.parse(localStorage.getItem(restoredProject.name));
     // restoredProject.taskList = restoredTask;
-    console.log('restoredTask');
-    console.log(restoredTask);
+    // console.log('restoredTask');
+    // console.log(restoredTask);
     // console.log(restoredTask[0]);
     restoredProject.createDOM();
   });
