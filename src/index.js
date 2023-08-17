@@ -341,10 +341,6 @@ submitBtn.addEventListener('click', () => {
   overlay.classList.remove('active');
   clearForm();
   localStorage.setItem(activeProject.name, JSON.stringify(activeProject.taskList));
-  // console.log('activeProject.name');
-  // console.log(JSON.parse(localStorage.getItem(activeProject.name)));
-  // console.log('activeproject taskList');
-  // console.log(activeProject.taskList);
 });
 projectArrow.addEventListener('click', () => {
   const projectLi = projectListDOM.children;
